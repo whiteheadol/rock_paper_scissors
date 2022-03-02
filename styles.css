@@ -1,0 +1,120 @@
+/* * {
+  border: 2px solid pink;
+} */
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  background-color: #b6dbd5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0;
+  letter-spacing: 6px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+h4 {
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+p {
+  font-size: 20px;
+  margin: 5px;
+}
+
+/* SIDEBARS */
+.user-text, .computer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user-sidebar {
+  border-right: 5px solid #72baad;
+}
+
+.computer-sidebar {
+  border-left: 5px solid #72baad;
+}
+
+.user-sidebar, .computer-sidebar {
+  width: 15%;
+  background-color: #d8ece9;
+}
+
+.character {
+  height:80px;
+  margin: 10px;
+  background-color: #d8ece9;
+}
+
+/* MAIN DISPLAY */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.classic-game {
+  width: 40%;
+  height: 25%;
+  margin-top: 80px;
+}
+
+.spicy-game {
+  width: 60%;
+  height: 34%;
+}
+
+.game-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a5d3cb;
+  border: 3px solid #72baad;
+  margin: 40px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.images {
+  margin-top: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weapon {
+  height: 200px;
+  margin: 20px 60px;
+}
+
+.hidden {
+  display: none;
+}
