@@ -70,23 +70,27 @@ class Game {
     }
   }
 
+//The draw property isn't changing to true, not sure why?
   determineWinner() {
     if (this.alienChoice === this.computerChoice) {
+      this.winner = 'No winner!';
       this.isDraw = true;
-    } else if (this.alienChoice === 'rock' && this.computerChoice === 'scissors') {
+    } else if (this.alienChoice === 'rock' && (this.computerChoice === 'scissors' || this.computerChoice === 'lizard')) {
       this.winner = 'alien';
-    } else if (this.alienChoice === 'paper' && this.computerChoice === 'rock') {
+    } else if (this.alienChoice === 'paper' && (this.computerChoice === 'rock' || this.computerChoice === 'alien')) {
       this.winner = 'alien';
-    } else if (this.alienChoice === 'scissors' && this.computerChoice === 'paper') {
+    } else if (this.alienChoice === 'scissors' && (this.computerChoice === 'paper' || this.computerChoice === 'lizard')) {
+      this.winner = 'alien';
+    } else if (this.gameType === 'classic'){
+      this.winner = 'computer';
+    } else if (this.alienChoice === 'lizard' && (this.computerChoice === 'paper' || this.computerChoice === 'alien')) {
+      this.winner = 'alien';
+    } else if (this.alienChoice === 'alien' && (this.computerChoice === 'scissors' || this.computerChoice === 'rock')) {
       this.winner = 'alien';
     } else {
       this.winner = 'computer';
     }
     this.updateWins();
-  }
-
-  determineWinnerSpicy() {
-
   }
 
   updateWins() {

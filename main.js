@@ -30,7 +30,7 @@ classicImages.addEventListener('click', function() {
 spicyImages.addEventListener('click', function() {
   currentGame.assignAlienChoiceSpicy(event);
   currentGame.assignComputerChoiceSpicy();
-  currentGame.determineWinnerSpicy();
+  currentGame.determineWinner();
 })
 
 //Event Handlers & Functions
