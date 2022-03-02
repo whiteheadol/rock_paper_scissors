@@ -40,14 +40,26 @@ class Game {
     }
   }
 
-  // determineWinner() {
-  //   if (this.alienChoice === this.computerChoice) {
-  //
-  //   }
-  // }
-  //
+  determineWinner() {
+    if (this.alienChoice === this.computerChoice) {
+      this.isDraw = true;
+    } else if (this.alienChoice === 'rock' && this.computerChoice === 'scissors') {
+      this.winner = 'alien';
+    } else if (this.alienChoice === 'paper' && this.computerChoice === 'rock') {
+      this.winner = 'alien';
+    } else if (this.alienChoice === 'scissors' && this.computerChoice === 'paper') {
+      this.winner = 'alien';
+    } else {
+      this.winner = 'computer';
+    }
+  }
+
   updateWins() {
-    //Depending on who wins game, update their wins
+    if (this.winner === 'alien') {
+      this.alien.takeTurn();
+    } else if (this.winner === 'computer') {
+      this.computer.takeTurn();
+    }
   }
 
   displayWins() {
