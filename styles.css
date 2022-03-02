@@ -103,7 +103,7 @@ p {
   margin-top: 40px;
 }
 
-.images {
+.classic-images, .spicy-images {
   margin-top: 140px;
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +113,18 @@ p {
 .weapon {
   height: 200px;
   margin: 20px 60px;
+  cursor: pointer;
+  transition: .4s
+}
+
+
+.weapon:hover {
+  transform: scale(1.4);
+}
+
+.game-box:hover {
+  background-color: #72baad;
+  border: 3px solid #a5d3cb;
 }
 
 .hidden {

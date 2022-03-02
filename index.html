@@ -16,33 +16,35 @@
     <main class="main-page">
       <section class="title">
         <h1>Rock, Paper, Scissors</h1>
-        <h2 class="">Choose Your Game:</h2>
+        <h2 class="subtitle">Choose Your Game:</h2>
       </section>
-      <section class="classic-game game-box">
-        <h3>Classic Game</h3>
-        <p>Rock > Scissors</p>
-        <p>Paper > Rock</p>
-        <p>Scissors > Paper</p>
+      <!-- <section class="game-options"> -->
+        <section class="classic-game game-box" id="classic">
+          <h3>Classic Game</h3>
+          <p>Rock > Scissors</p>
+          <p>Paper > Rock</p>
+          <p>Scissors > Paper</p>
+        </section>
+        <section class="spicy-game game-box" id="spicy">
+          <h3>Spicy Game</h3>
+          <p>Rock > Scissors & Lizzard</p>
+          <p>Paper > Rock & Alien</p>
+          <p>Scissors > Paper & Lizard</p>
+          <p>Lizard > Paper & Alien</p>
+          <p>Alien > Scissors & Rock</p>
+        </section>
+      <!-- </section> -->
+      <section class="classic-images hidden">
+        <img src="./assets/happy-rocks.png" alt="happy rocks" class="weapon" id="rock">
+        <img src="./assets/happy-paper.png" alt="happy paper" class="weapon" id="paper">
+        <img src="./assets/happy-scissors.png" alt="happy scissors" class="weapon" id="scissors">
       </section>
-      <section class="spicy-game game-box">
-        <h3>Spicy Game</h3>
-        <p>Rock > Scissors & Lizzard</p>
-        <p>Paper > Rock & Alien</p>
-        <p>Scissors > Paper & Lizard</p>
-        <p>Lizard > Paper & Alien</p>
-        <p>Alien > Scissors & Rock</p>
-      </section>
-      <section class="images hidden">
-        <img src="./assets/happy-rocks.png" alt="happy rocks" class="weapon">
-        <img src="./assets/happy-paper.png" alt="happy paper" class="weapon">
-        <img src="./assets/happy-scissors.png" alt="happy scissors" class="weapon">
-      </section>
-      <section class="images hidden">
-        <img src="./assets/happy-rocks.png" alt="happy rocks" class="weapon">
-        <img src="./assets/happy-paper.png" alt="happy paper" class="weapon">
-        <img src="./assets/happy-scissors.png" alt="happy scissors" class="weapon">
-        <img src="./assets/lizard.png" alt="happy lizard" class="weapon">
-        <img src="./assets/happy-alien.png" alt="happy alien" class="weapon">
+      <section class="spicy-images hidden">
+        <img src="./assets/happy-rocks.png" alt="happy rocks" class="weapon" id="sRock">
+        <img src="./assets/happy-paper.png" alt="happy paper" class="weapon" id="sPaper">
+        <img src="./assets/happy-scissors.png" alt="happy scissors" class="weapon" id="sScissors">
+        <img src="./assets/lizard.png" alt="happy lizard" class="weapon" id="sLizard">
+        <img src="./assets/happy-alien.png" alt="happy alien" class="weapon" id="sAlien">
       </section>
     </main>
     <section class="computer-sidebar">
@@ -53,5 +55,7 @@
       </div>
     </section>
   </body>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </html>
