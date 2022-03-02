@@ -1,0 +1,62 @@
+* {
+  border: 2px solid pink;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  background-color: 
+}
+
+/* SIDEBARS */
+.user-text, .computer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 15%;
+}
+
+/* MAIN DISPLAY */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.classic-game {
+  width: 40%;
+  height: 20%;
+}
+
+.spicy-game {
+  width: 60%;
+  height: 30%;
+}
+
+.game-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -60px;
+}
+
+p {
+  margin: 5px;
+}
