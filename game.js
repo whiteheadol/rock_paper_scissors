@@ -52,6 +52,7 @@ class Game {
     } else {
       this.winner = 'computer';
     }
+    this.updateWins();
   }
 
   updateWins() {
@@ -64,6 +65,7 @@ class Game {
 
   displayWins() {
     //Show the current wins in the browser
+    //This will probably get moved to main.js??
   }
 
   resetBoard() {
