@@ -22,7 +22,7 @@ h1 {
 
 h2 {
   font-size: 30px;
-  margin: 0;
+  margin-top: 20px;
 }
 
 h3 {
@@ -32,6 +32,7 @@ h3 {
 
 h4 {
   font-size: 40px;
+  margin-top: 5px;
 }
 
 p {
@@ -57,6 +58,12 @@ p {
 
 .user-sidebar, .computer-sidebar {
   width: 15%;
+  background-color: #d8ece9;
+}
+
+.character {
+  height:80px;
+  margin: 10px;
   background-color: #d8ece9;
 }
 
@@ -96,6 +103,18 @@ p {
   margin-top: 40px;
 }
 
-/* .hidden {
+.images {
+  margin-top: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weapon {
+  height: 200px;
+  margin: 20px 60px;
+}
+
+.hidden {
   display: none;
-} */
+}
