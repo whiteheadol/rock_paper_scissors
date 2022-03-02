@@ -56,7 +56,18 @@ class Game {
   }
 
   assignComputerChoiceSpicy() {
-
+    var computerSpicy = Math.floor(Math.random() * 5);
+    if (computerSpicy === 0) {
+      this.computerChoice = 'rock';
+    } else if (computerSpicy === 1) {
+      this.computerChoice = 'paper';
+    } else if (computerSpicy === 2) {
+      this.computerChoice = 'scissors';
+    } else if (computerSpicy === 3) {
+      this.computerChoice = 'lizard';
+    } else if (computerSpicy === 4) {
+      this.computerChoice = 'alien';
+    }
   }
 
   determineWinner() {
@@ -77,7 +88,7 @@ class Game {
   determineWinnerSpicy() {
 
   }
-  
+
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
