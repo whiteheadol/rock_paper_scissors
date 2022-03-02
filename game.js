@@ -18,9 +18,16 @@ class Game {
     }
   }
 
-  assignAlienChoice() {
-    
-  }
+  assignAlienChoice(event) {
+    var alienWeapon = event.target.id;
+      if (alienWeapon === 'rock') {
+        this.alienChoice = 'rock';
+      } else if (alienWeapon === 'paper') {
+        this.alienChoice = 'paper';
+      } else if (alienWeapon = 'scissors') {
+        this.alienChoice = 'scissors';
+      }
+    }
 
   assignComputerChoice() {
 

@@ -110,7 +110,7 @@ p {
   justify-content: center;
 }
 
-.weapon {
+.weapon1, .weapon2 {
   height: 200px;
   margin: 20px 60px;
   cursor: pointer;

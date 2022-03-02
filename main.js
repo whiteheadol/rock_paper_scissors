@@ -10,6 +10,9 @@ var spicyBox = document.querySelector('.spicy-game');
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
 
+var classicWeapons = document.querySelectorAll('.weapon1');
+var spicyWeapons = document.querySelectorAll('weapon2');
+
 //Event Listeners
 gameOptionPage.addEventListener('click', function() {
   event.preventDefault();
@@ -17,6 +20,10 @@ gameOptionPage.addEventListener('click', function() {
   showGamePage();
   }
 );
+
+classicImages.addEventListener('click', function() {
+  currentGame.assignAlienChoice(event);
+})
 
 //Event Handlers & Functions
 function showGamePage() {
