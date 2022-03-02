@@ -29,6 +29,21 @@ class Game {
       }
     }
 
+    assignAlienChoiceSpicy(event) {
+      var alienWeaponS = event.target.id;
+      if (alienWeaponS === 'sRock') {
+        this.alienChoice = 'rock';
+      } else if (alienWeaponS === 'sPaper') {
+        this.alienChoice = 'paper';
+      } else if (alienWeaponS === 'sScissors') {
+        this.alienChoice = 'scissors';
+      } else if (alienWeaponS === 'sLizard') {
+        this.alienChoice = 'lizard';
+      } else if (alienWeaponS === 'sAlien') {
+        this.alienChoice = 'alien';
+      }
+    }
+
   assignComputerChoice() {
     var computerNum = Math.floor(Math.random() * 3);
     if (computerNum === 0) {
@@ -38,6 +53,10 @@ class Game {
     } else if (computerNum === 2) {
       this.computerChoice = 'scissors';
     }
+  }
+
+  assignComputerChoiceSpicy() {
+
   }
 
   determineWinner() {
@@ -55,6 +74,10 @@ class Game {
     this.updateWins();
   }
 
+  determineWinnerSpicy() {
+
+  }
+  
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
