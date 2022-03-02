@@ -30,9 +30,22 @@ class Game {
     }
 
   assignComputerChoice() {
-
+    var computerNum = Math.floor(Math.random() * 3);
+    if (computerNum === 0) {
+      this.computerChoice = 'rock';
+    } else if (computerNum === 1) {
+      this.computerChoice = 'paper';
+    } else if (computerNum === 2) {
+      this.computerChoice = 'scissors';
+    }
   }
 
+  // determineWinner() {
+  //   if (this.alienChoice === this.computerChoice) {
+  //
+  //   }
+  // }
+  //
   updateWins() {
     //Depending on who wins game, update their wins
   }

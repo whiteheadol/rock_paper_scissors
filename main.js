@@ -23,6 +23,7 @@ gameOptionPage.addEventListener('click', function() {
 
 classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
+  currentGame.assignComputerChoice();
 })
 
 //Event Handlers & Functions
