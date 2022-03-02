@@ -2,7 +2,7 @@
 var currentGame = new Game();
 
 //Query Selectors
-var gameOptionPage = document.querySelector('.main-page');
+var gameOptionPage = document.querySelector('.game-options');
 var gameOption = document.querySelectorAll('.game-box');
 
 var classicBox = document.querySelector('.classic-game');

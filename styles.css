@@ -78,13 +78,21 @@ p {
 
 .classic-game {
   width: 40%;
-  height: 25%;
+  height: 30%;
   margin-top: 80px;
 }
 
 .spicy-game {
   width: 60%;
-  height: 34%;
+  height: 40%;
+}
+
+.game-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 }
 
 .game-box {
@@ -104,10 +112,14 @@ p {
 }
 
 .classic-images, .spicy-images {
-  margin-top: 140px;
+  margin-bottom: 360px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.spicy-images {
+  margin-bottom: 180px;
 }
 
 .weapon1, .weapon2 {
@@ -117,14 +129,19 @@ p {
   transition: .4s
 }
 
+.weapon1:hover {
+  transform: scale(1.4);
+}
 
-.weapon:hover {
+.weapon2:hover {
   transform: scale(1.4);
 }
 
 .game-box:hover {
   background-color: #72baad;
   border: 3px solid #a5d3cb;
+  transform: scale(1.05);
+  transition: .4s;
 }
 
 .hidden {
