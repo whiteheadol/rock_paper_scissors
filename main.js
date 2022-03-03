@@ -4,25 +4,19 @@ var currentGame = new Game();
 //Query Selectors
 var gameOptionPage = document.querySelector('.game-options');
 var gameOption = document.querySelectorAll('.game-box');
-
-// var classicBox = document.querySelector('.classic-game');
-// var spicyBox = document.querySelector('.spicy-game');
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
-
-var classicWeapons = document.querySelectorAll('.weapon1');
-var spicyWeapons = document.querySelectorAll('weapon2');
-
 var userWins = document.querySelector('.user-wins');
 var computerWins = document.querySelector('.computer-wins');
-
 var clearButton = document.querySelector('.clear-button');
 var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
 var winResults = document.querySelector('.win-results');
-
 var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
+
+var tokenButton = document.querySelector('.token-changer');
+var userCharacter = document.querySelector('.character1');
 
 
 //Event Listeners
@@ -51,7 +45,16 @@ spicyImages.addEventListener('click', function() {
 });
 
 clearButton.addEventListener('click', function() {
-  toggleChooseAgainButton();
+  setTimeout(toggleChooseAgainButton, 300);
+});
+
+window.addEventListener('load', function() {
+  currentGame.assignPlayerTokens();
+})
+
+tokenButton.addEventListener('click', function() {
+  changeToken();
+  displayUserToken();
 });
 
 //Event Handlers & Functions
@@ -60,6 +63,7 @@ function showGamePage() {
   spicyButton.classList.add('hidden');
   subTitle.classList.add('hidden');
   fighterText.classList.remove('hidden');
+  tokenButton.classList.add('hidden');
   if (currentGame.gameType === 'classic') {
     classicImages.classList.remove('hidden');
   } else if (currentGame.gameType === 'spicy') {
@@ -108,3 +112,28 @@ function toggleChooseAgainButton() {
     spicyImages.classList.remove('hidden');
   }
 };
+
+function displayUserToken() {
+  userCharacter.src = currentGame.alien.token;
+}
+
+function changeToken() {
+  if (currentGame.alien.token === './assets/black-and-white-alien.png') {
+    currentGame.alien.token = './assets/pink-alien.png';
+  } else if (currentGame.alien.token === './assets/pink-alien.png') {
+    currentGame.alien.token = './assets/blue-alien.png';
+  } else if (currentGame.alien.token === './assets/blue-alien.png') {
+    currentGame.alien.token = './assets/black-and-white-alien.png';
+  }
+  changeTokenAlt();
+};
+
+function changeTokenAlt() {
+  if (currentGame.alien.token === './assets/black-and-white-alien.png') {
+    userCharacter.alt = 'little alien head';
+  } else if (currentGame.alien.token === './assets/pink-alien.png') {
+    userCharacter.alt = 'little pink alien';
+  } else if (currentGame.alien.token === './assets/blue-alien.png') {
+    userCharacter.alt = 'little alien in ship';
+  }
+}

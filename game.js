@@ -9,10 +9,10 @@ class Game {
     this.winner = '';
   }
 
-  // assignPlayerTokens() {
-  //   this.alien.token = './assets/black-and-white-alien.png';
-  //   this.computer.token = './assets/482469.png';
-  // }
+  assignPlayerTokens() {
+    this.alien.token = './assets/black-and-white-alien.png';
+    this.computer.token = './assets/482469.png';
+  }
 
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;
@@ -76,7 +76,7 @@ class Game {
       this.winner = 'alien';
     } else if (this.alienChoice === 'scissors' && (this.computerChoice === 'paper' || this.computerChoice === 'lizard')) {
       this.winner = 'alien';
-    } else if (this.gameType === 'classic'){
+    } else if (this.gameType === 'classic') {
       this.winner = 'computer';
     } else if (this.alienChoice === 'lizard' && (this.computerChoice === 'paper' || this.computerChoice === 'alien')) {
       this.winner = 'alien';
