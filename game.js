@@ -143,7 +143,14 @@ class Game {
     }
   }
 
-  // toggleChooseAgainButton() {}
+  toggleChooseAgainButton() {
+    winResults.classList.add('hidden');
+    if (currentGame.gameType === 'classic') {
+      classicImages.classList.remove('hidden');
+    } else if (currentGame.gameType === 'spicy') {
+      spicyImages.classList.remove('hidden');
+    }
+  }
 
 
 // function showGamePage() {

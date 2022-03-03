@@ -39,6 +39,10 @@ spicyImages.addEventListener('click', function() {
   currentGame.determineWinner();
 });
 
+clearButton.addEventListener('click', function() {
+  currentGame.toggleChooseAgainButton();
+});
+
 //Event Handlers & Functions
 function showGamePage() {
   classicBox.classList.add('hidden');
