@@ -9,14 +9,14 @@ class Game {
     this.winner = '';
   }
 
-  determineGameType(event) {
-    var gameId = event.target.id;
-    for (var i = 0; i < 2; i++) {
-      if (gameOption[i].id === gameId) {
-        this.gameType = gameId;
-      }
-    }
-  }
+  // determineGameType(event) {
+  //   var gameId = event.target.id;
+  //   for (var i = 0; i < 2; i++) {
+  //     if (gameOption[i].id === gameId) {
+  //       this.gameType = gameId;
+  //     }
+  //   }
+  // }
 
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;

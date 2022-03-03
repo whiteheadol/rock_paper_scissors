@@ -40,7 +40,7 @@ p {
   margin: 5px;
 }
 
-button {
+.clear-button {
   background-color: #a5d3cb;
   color: white;
   font-size: 30px;
@@ -50,7 +50,7 @@ button {
   margin-bottom: 500px;
 }
 
-button:hover {
+.clear-button:hover {
   background-color: #72baad;
   transform: scale(1.2);
   transition: .4s;

@@ -5,8 +5,8 @@ var currentGame = new Game();
 var gameOptionPage = document.querySelector('.game-options');
 var gameOption = document.querySelectorAll('.game-box');
 
-var classicBox = document.querySelector('.classic-game');
-var spicyBox = document.querySelector('.spicy-game');
+// var classicBox = document.querySelector('.classic-game');
+// var spicyBox = document.querySelector('.spicy-game');
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
 
@@ -21,13 +21,20 @@ var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
 var winResults = document.querySelector('.win-results');
 
+var classicButton = document.querySelector('.classic-game');
+var spicyButton = document.querySelector('.spicy-game');
+
 
 //Event Listeners
-gameOptionPage.addEventListener('click', function() {
-  event.preventDefault();
-  currentGame.determineGameType(event);
+classicButton.addEventListener('click', function() {
+  currentGame.gameType = 'classic';
   showGamePage();
-  });
+});
+
+spicyButton.addEventListener('click', function() {
+  currentGame.gameType = 'spicy';
+  showGamePage();
+})
 
 classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
@@ -47,8 +54,8 @@ clearButton.addEventListener('click', function() {
 
 //Event Handlers & Functions
 function showGamePage() {
-  classicBox.classList.add('hidden');
-  spicyBox.classList.add('hidden');
+  classicButton.classList.add('hidden');
+  spicyButton.classList.add('hidden');
   subTitle.classList.add('hidden');
   fighterText.classList.remove('hidden');
   if (currentGame.gameType === 'classic') {
