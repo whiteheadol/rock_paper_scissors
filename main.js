@@ -40,16 +40,18 @@ classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
   currentGame.assignComputerChoice();
   currentGame.determineWinner();
+  displayWins();
 });
 
 spicyImages.addEventListener('click', function() {
   currentGame.assignAlienChoiceSpicy(event);
   currentGame.assignComputerChoiceSpicy();
   currentGame.determineWinner();
+  displayWins();
 });
 
 clearButton.addEventListener('click', function() {
-  currentGame.toggleChooseAgainButton();
+  toggleChooseAgainButton();
 });
 
 //Event Handlers & Functions
@@ -58,6 +60,42 @@ function showGamePage() {
   spicyButton.classList.add('hidden');
   subTitle.classList.add('hidden');
   fighterText.classList.remove('hidden');
+  if (currentGame.gameType === 'classic') {
+    classicImages.classList.remove('hidden');
+  } else if (currentGame.gameType === 'spicy') {
+    spicyImages.classList.remove('hidden');
+  }
+};
+
+function displayWins() {
+    clearButton.classList.remove('hidden');
+    fighterText.classList.add('hidden');
+    winResults.classList.remove('hidden');
+    resetBoard();
+    updateWinText();
+  };
+
+function updateWinText() {
+   if (currentGame.winner === 'alien') {
+    winResults.innerText = 'You won this round!';
+  } else if (currentGame.winner === 'computer') {
+    winResults.innerText = 'The computer won this round.';
+  } else {
+    winResults.innerText = 'This round was a tie, try again!';
+  }
+};
+
+function resetBoard() {
+  if (currentGame.gameType === 'classic') {
+    classicImages.classList.add('hidden');
+  } else if (currentGame.gameType === 'spicy') {
+    spicyImages.classList.add('hidden');
+  }
+};
+
+function toggleChooseAgainButton() {
+  winResults.classList.add('hidden');
+  clearButton.classList.add('hidden');
   if (currentGame.gameType === 'classic') {
     classicImages.classList.remove('hidden');
   } else if (currentGame.gameType === 'spicy') {

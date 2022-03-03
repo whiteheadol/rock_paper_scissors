@@ -9,15 +9,6 @@ class Game {
     this.winner = '';
   }
 
-  // determineGameType(event) {
-  //   var gameId = event.target.id;
-  //   for (var i = 0; i < 2; i++) {
-  //     if (gameOption[i].id === gameId) {
-  //       this.gameType = gameId;
-  //     }
-  //   }
-  // }
-
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;
       if (alienWeapon === 'rock') {
@@ -93,8 +84,6 @@ class Game {
     this.updateWins();
   }
 
-//Add to this function: the functionality to change the side bar wins text
-//Maybe a separate function that is invoked inside of this one?
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
@@ -103,42 +92,10 @@ class Game {
       this.computer.takeTurn();
       computerWins.innerText = `${this.computer.wins}`;
     }
-    this.displayWins();
+    // this.displayWins();
   }
 
-  displayWins() {
-    clearButton.classList.remove('hidden');
-    fighterText.classList.add('hidden');
-    winResults.classList.remove('hidden');
-    this.resetBoard();
-    this.updateWinText();
-  }
+//Add to this function: the functionality to change the side bar wins text
+//Maybe a separate function that is invoked inside of this one?
 
-  updateWinText() {
-     if (this.winner === 'alien') {
-      winResults.innerText = 'You won this round!';
-    } else if (this.winner === 'computer') {
-      winResults.innerText = 'The computer won this round.';
-    } else {
-      winResults.innerText = 'This round was a tie, try again!';
-    }
-  }
-
-  resetBoard() {
-    if (currentGame.gameType === 'classic') {
-      classicImages.classList.add('hidden');
-    } else if (currentGame.gameType === 'spicy') {
-      spicyImages.classList.add('hidden');
-    }
-  }
-
-  toggleChooseAgainButton() {
-    winResults.classList.add('hidden');
-    clearButton.classList.add('hidden');
-    if (currentGame.gameType === 'classic') {
-      classicImages.classList.remove('hidden');
-    } else if (currentGame.gameType === 'spicy') {
-      spicyImages.classList.remove('hidden');
-    }
-  }
 }
