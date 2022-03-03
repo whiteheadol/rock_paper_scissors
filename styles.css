@@ -40,6 +40,22 @@ p {
   margin: 5px;
 }
 
+button {
+  background-color: #a5d3cb;
+  color: white;
+  font-size: 30px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 500px;
+}
+
+button:hover {
+  background-color: #72baad;
+  transform: scale(1.2);
+  transition: .4s;
+}
+
 /* SIDEBARS */
 .user-text, .computer-text {
   display: flex;

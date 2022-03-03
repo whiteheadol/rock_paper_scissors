@@ -16,6 +16,8 @@ var spicyWeapons = document.querySelectorAll('weapon2');
 var userWins = document.querySelector('.user-wins');
 var computerWins = document.querySelector('.computer-wins');
 
+var clearButton = document.querySelector('.clear-button');
+
 //Event Listeners
 gameOptionPage.addEventListener('click', function() {
   event.preventDefault();

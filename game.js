@@ -103,9 +103,9 @@ class Game {
       this.computer.takeTurn();
       computerWins.innerText = `${this.computer.wins}`;
     }
+    this.displayWins();
   }
 
-}
 
 //show a button that will let you 'choose again'
 //Show a string reflecting your choice and who won?
@@ -114,23 +114,23 @@ class Game {
 //toggle to remove hidden here, when wins are displayed
 //clicking the button will bring back the selected gameType weapons
 //side panels will keep their wins
-  // displayWins() {
-  //
-  // }
+  displayWins() {
+    clearButton.classList.remove('hidden');
+    this.resetBoard();
+  }
 
 //Can invoke this resetBoard function to bring the correct images back?
 //This is the function that will run when the choose again button is clicked
 //This function will probably live in main.js
 
-//   resetBoard() {
-//     if (currentGame.gameType === 'classic') {
-//       classicImages.classList.add('hidden');
-//     } else if (currentGame.gameType === 'spicy') {
-//       spicyImages.classList.add('hidden');
-//     }
-//
-//   }
-// };
+  resetBoard() {
+    if (currentGame.gameType === 'classic') {
+      classicImages.classList.add('hidden');
+    } else if (currentGame.gameType === 'spicy') {
+      spicyImages.classList.add('hidden');
+    }
+  }
+
 
 // function showGamePage() {
 //   classicBox.classList.add('hidden');
@@ -143,3 +143,5 @@ class Game {
 // };
 
 //this. in front of methods
+
+}
