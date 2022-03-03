@@ -13,13 +13,15 @@ var spicyImages = document.querySelector('.spicy-images');
 var classicWeapons = document.querySelectorAll('.weapon1');
 var spicyWeapons = document.querySelectorAll('weapon2');
 
+var userWins = document.querySelector('.user-wins');
+var computerWins = document.querySelector('.computer-wins');
+
 //Event Listeners
 gameOptionPage.addEventListener('click', function() {
   event.preventDefault();
   currentGame.determineGameType(event);
   showGamePage();
-  }
-);
+  });
 
 classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
@@ -31,7 +33,7 @@ spicyImages.addEventListener('click', function() {
   currentGame.assignAlienChoiceSpicy(event);
   currentGame.assignComputerChoiceSpicy();
   currentGame.determineWinner();
-})
+});
 
 //Event Handlers & Functions
 function showGamePage() {
