@@ -9,15 +9,6 @@ class Game {
     this.winner = '';
   }
 
-  determineGameType(event) {
-    var gameId = event.target.id;
-    for (var i = 0; i < 2; i++) {
-      if (gameOption[i].id === gameId) {
-        this.gameType = gameId;
-      }
-    }
-  }
-
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;
       if (alienWeapon === 'rock') {
@@ -93,8 +84,6 @@ class Game {
     this.updateWins();
   }
 
-//Add to this function: the functionality to change the side bar wins text
-//Maybe a separate function that is invoked inside of this one?
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
@@ -103,66 +92,10 @@ class Game {
       this.computer.takeTurn();
       computerWins.innerText = `${this.computer.wins}`;
     }
-    this.displayWins();
+    // this.displayWins();
   }
 
-
-//show a button that will let you 'choose again'
-//Show a string reflecting your choice and who won?
-//add button to html with class of hidden
-//Might need to add an empty <p> with a class that I can update the text of?
-//toggle to remove hidden here, when wins are displayed
-//clicking the button will bring back the selected gameType weapons
-//side panels will keep their wins
-  displayWins() {
-    clearButton.classList.remove('hidden');
-    this.resetBoard();
-    winResults.classList.remove('hidden');
-    this.updateWinText();
-  }
-
-  updateWinText() {
-     if (this.winner === 'alien') {
-      winResults.innerText = 'You won this round!';
-    } else if (this.winner === 'computer') {
-      winResults.innerText = 'The computer won this round.';
-    } else {
-      winResults.innerText = 'This round was a tie, try again!';
-    }
-  }
-
-//Can invoke this resetBoard function to bring the correct images back?
-//This is the function that will run when the choose again button is clicked
-//This function will probably live in main.js
-
-  resetBoard() {
-    if (currentGame.gameType === 'classic') {
-      classicImages.classList.add('hidden');
-    } else if (currentGame.gameType === 'spicy') {
-      spicyImages.classList.add('hidden');
-    }
-  }
-
-  toggleChooseAgainButton() {
-    winResults.classList.add('hidden');
-    if (currentGame.gameType === 'classic') {
-      classicImages.classList.remove('hidden');
-    } else if (currentGame.gameType === 'spicy') {
-      spicyImages.classList.remove('hidden');
-    }
-  }
-
-
-// function showGamePage() {
-//   classicBox.classList.add('hidden');
-//   spicyBox.classList.add('hidden');
-//   if (currentGame.gameType === 'classic') {
-//     classicImages.classList.remove('hidden');
-//   } else if (currentGame.gameType === 'spicy') {
-//     spicyImages.classList.remove('hidden');
-//   }
-// };
-
-//this. in front of methods
+//Add to this function: the functionality to change the side bar wins text
+//Maybe a separate function that is invoked inside of this one?
 
 }
