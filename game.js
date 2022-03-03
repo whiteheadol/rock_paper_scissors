@@ -9,6 +9,11 @@ class Game {
     this.winner = '';
   }
 
+  // assignPlayerTokens() {
+  //   this.alien.token = './assets/black-and-white-alien.png';
+  //   this.computer.token = './assets/482469.png';
+  // }
+
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;
       if (alienWeapon === 'rock') {
@@ -87,15 +92,8 @@ class Game {
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
-      userWins.innerText = `${this.alien.wins}`;
     } else if (this.winner === 'computer') {
       this.computer.takeTurn();
-      computerWins.innerText = `${this.computer.wins}`;
     }
-    // this.displayWins();
   }
-
-//Add to this function: the functionality to change the side bar wins text
-//Maybe a separate function that is invoked inside of this one?
-
 }
