@@ -40,14 +40,14 @@ classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
   currentGame.assignComputerChoice();
   currentGame.determineWinner();
-  displayWins();
+  setTimeout(displayWins,600);
 });
 
 spicyImages.addEventListener('click', function() {
   currentGame.assignAlienChoiceSpicy(event);
   currentGame.assignComputerChoiceSpicy();
   currentGame.determineWinner();
-  displayWins();
+  setTimeout(displayWins, 600);
 });
 
 clearButton.addEventListener('click', function() {
@@ -73,6 +73,7 @@ function displayWins() {
     winResults.classList.remove('hidden');
     resetBoard();
     updateWinText();
+    updateSidebarWins();
   };
 
 function updateWinText() {
@@ -84,6 +85,11 @@ function updateWinText() {
     winResults.innerText = 'This round was a tie, try again!';
   }
 };
+
+function updateSidebarWins() {
+  userWins.innerText = `${currentGame.alien.wins}`;
+  computerWins.innerText = `${currentGame.computer.wins}`;
+}
 
 function resetBoard() {
   if (currentGame.gameType === 'classic') {
