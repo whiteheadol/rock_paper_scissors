@@ -70,10 +70,8 @@ class Game {
     }
   }
 
-//The draw property isn't changing to true, not sure why?
   determineWinner() {
     if (this.alienChoice === this.computerChoice) {
-      this.winner = 'No winner!';
       this.isDraw = true;
     } else if (this.alienChoice === 'rock' && (this.computerChoice === 'scissors' || this.computerChoice === 'lizard')) {
       this.winner = 'alien';
@@ -96,8 +94,10 @@ class Game {
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();
+      return `You won! Congratulations!`;
     } else if (this.winner === 'computer') {
       this.computer.takeTurn();
+      return `The computer won. Try again!`;
     }
   }
 
