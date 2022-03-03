@@ -10,13 +10,14 @@
       <div class="user-text">
         <img src="./assets/black-and-white-alien.png" alt="little alien head" class="character">
         <h4>You!</h4>
-        <p>Wins: 0</p>
+        <p>Wins: <span class="user-wins">0</span></p>
       </div>
     </section>
     <main class="main-page">
       <section class="title">
         <h1>Rock, Paper, Scissors</h1>
         <h2 class="subtitle">Choose Your Game:</h2>
+        <p class="win-results hidden">Win results</p>
       </section>
       <section class="game-options">
         <section class="classic-game game-box" id="classic">
@@ -46,12 +47,16 @@
         <img src="./assets/lizard.png" alt="happy lizard" class="weapon2" id="sLizard">
         <img src="./assets/happy-alien.png" alt="happy alien" class="weapon2" id="sAlien">
       </section>
+      <section class="refresh-page">
+        <p class="winner-text"></p>
+        <button class="clear-button hidden">Choose again!</button>
+    </section>
     </main>
     <section class="computer-sidebar">
       <div class="computer-text">
         <img src="./assets/482469.png" alt="little computer icon" class="character">
         <h4>Computer!</h4>
-        <p>Wins: 0</p>
+        <p>Wins: <span class="computer-wins">0</span></p>
       </div>
     </section>
   </body>
