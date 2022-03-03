@@ -2,7 +2,7 @@
 var currentGame = new Game();
 
 //Query Selectors
-var gameOptionPage = document.querySelector('.main-page');
+var gameOptionPage = document.querySelector('.game-options');
 var gameOption = document.querySelectorAll('.game-box');
 
 var classicBox = document.querySelector('.classic-game');
@@ -23,6 +23,14 @@ gameOptionPage.addEventListener('click', function() {
 
 classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
+  currentGame.assignComputerChoice();
+  currentGame.determineWinner();
+});
+
+spicyImages.addEventListener('click', function() {
+  currentGame.assignAlienChoiceSpicy(event);
+  currentGame.assignComputerChoiceSpicy();
+  currentGame.determineWinner();
 })
 
 //Event Handlers & Functions
