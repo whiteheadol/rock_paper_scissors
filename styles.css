@@ -45,7 +45,7 @@ button {
   border-radius: 10px;
 }
 
-.token-changer, .clear-button {
+.token-changer, .clear-button, .change-game {
   background-color: #a5d3cb;
   color: white;
   border-radius: 5px;
@@ -58,7 +58,7 @@ button {
   margin-bottom: 500px;
 }
 
-.token-changer {
+.token-changer, .change-game {
   margin-top: 30px;
   height: 40px;
   width: 160px;

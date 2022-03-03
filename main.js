@@ -2,8 +2,10 @@
 var currentGame = new Game();
 
 //Query Selectors
-var gameOptionPage = document.querySelector('.game-options');
-var gameOption = document.querySelectorAll('.game-box');
+//I don't think I need to use these after all, but will not delete them until I've added
+//game changing functionality:
+// var gameOptionPage = document.querySelector('.game-options');
+// var gameOption = document.querySelectorAll('.game-box');
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
 var userWins = document.querySelector('.user-wins');
@@ -17,7 +19,7 @@ var spicyButton = document.querySelector('.spicy-game');
 
 var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.character1');
-
+var changeButton = document.querySelector('.change-game');
 
 //Event Listeners
 classicButton.addEventListener('click', function() {
@@ -52,10 +54,7 @@ window.addEventListener('load', function() {
   currentGame.assignPlayerTokens();
 })
 
-tokenButton.addEventListener('click', function() {
-  changeToken();
-  displayUserToken();
-});
+tokenButton.addEventListener('click', changeToken);
 
 //Event Handlers & Functions
 function showGamePage() {
@@ -75,6 +74,7 @@ function displayWins() {
     clearButton.classList.remove('hidden');
     fighterText.classList.add('hidden');
     winResults.classList.remove('hidden');
+    changeButton.classList.remove('hidden');
     resetBoard();
     updateWinText();
     updateSidebarWins();
@@ -111,12 +111,13 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     spicyImages.classList.remove('hidden');
   }
+  showGamePage();
 };
 
-function displayUserToken() {
-  userCharacter.src = currentGame.alien.token;
-}
-
+//I want to ask about this function
+//It is only updating the content of something in the game and player classes,
+//Should I move this to the game.js file? Or leave it here?
+//Main.js is specifically for the DOM
 function changeToken() {
   if (currentGame.alien.token === './assets/black-and-white-alien.png') {
     currentGame.alien.token = './assets/pink-alien.png';
@@ -126,7 +127,12 @@ function changeToken() {
     currentGame.alien.token = './assets/black-and-white-alien.png';
   }
   changeTokenAlt();
+  displayUserToken();
 };
+
+function displayUserToken() {
+  userCharacter.src = currentGame.alien.token;
+}
 
 function changeTokenAlt() {
   if (currentGame.alien.token === './assets/black-and-white-alien.png') {
