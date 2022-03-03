@@ -117,6 +117,18 @@ class Game {
   displayWins() {
     clearButton.classList.remove('hidden');
     this.resetBoard();
+    winResults.classList.remove('hidden');
+    this.updateWinText();
+  }
+
+  updateWinText() {
+     if (this.winner === 'alien') {
+      winResults.innerText = 'You won this round!';
+    } else if (this.winner === 'computer') {
+      winResults.innerText = 'The computer won this round.';
+    } else {
+      winResults.innerText = 'This round was a tie, try again!';
+    }
   }
 
 //Can invoke this resetBoard function to bring the correct images back?
@@ -130,6 +142,8 @@ class Game {
       spicyImages.classList.add('hidden');
     }
   }
+
+  // toggleChooseAgainButton() {}
 
 
 // function showGamePage() {

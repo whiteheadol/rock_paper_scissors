@@ -17,6 +17,8 @@ var userWins = document.querySelector('.user-wins');
 var computerWins = document.querySelector('.computer-wins');
 
 var clearButton = document.querySelector('.clear-button');
+var subTitle = document.querySelector('.subtitle');
+var winResults = document.querySelector('.win-results');
 
 //Event Listeners
 gameOptionPage.addEventListener('click', function() {
@@ -41,6 +43,7 @@ spicyImages.addEventListener('click', function() {
 function showGamePage() {
   classicBox.classList.add('hidden');
   spicyBox.classList.add('hidden');
+  subTitle.classList.add('hidden');
   if (currentGame.gameType === 'classic') {
     classicImages.classList.remove('hidden');
   } else if (currentGame.gameType === 'spicy') {
