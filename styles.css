@@ -40,6 +40,11 @@ p {
   margin: 5px;
 }
 
+button {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 10px;
+}
+
 .clear-button {
   background-color: #a5d3cb;
   color: white;
