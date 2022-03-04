@@ -97,4 +97,5 @@ class Game {
       this.computer.takeTurn();
     }
   }
+
 }

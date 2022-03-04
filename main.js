@@ -81,6 +81,7 @@ function displayWins() {
     resetBoard();
     updateWinText();
     updateSidebarWins();
+    displayWinIcons();
   };
 
 function updateWinText() {
@@ -95,10 +96,30 @@ function updateWinText() {
   computerImage.classList.remove('hidden');
 };
 
+//Should this function be in the game class?
+function updateWinIcon(choice) {
+  if (choice === 'rock') {
+    return './assets/happy-rocks.png';
+  } else if (choice === 'paper') {
+    return './assets/happy-paper.png';
+  } else if (choice === 'scissors') {
+    return './assets/happy-scissors.png';
+  } else if (choice === 'lizard') {
+    return './assets/lizard.png';
+  } else if (choice === 'alien') {
+    return './assets/happy-alien.png';
+  }
+};
+
+function displayWinIcons() {
+  userImage.src = updateWinIcon(currentGame.alienChoice);
+  computerImage.src = updateWinIcon(currentGame.computerChoice)
+}
+
 function updateSidebarWins() {
   userWins.innerText = `${currentGame.alien.wins}`;
   computerWins.innerText = `${currentGame.computer.wins}`;
-}
+};
 
 function resetBoard() {
   if (currentGame.gameType === 'classic') {
