@@ -146,6 +146,7 @@ function toggleChooseAgainButton() {
 //It is only updating the content of something in the game and player classes,
 //Should I move this to the game.js file? Or leave it here?
 //Main.js is specifically for the DOM
+//move this function to game.js
 function changeToken() {
   if (currentGame.alien.token === './assets/black-and-white-alien.png') {
     currentGame.alien.token = './assets/pink-alien.png';
