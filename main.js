@@ -20,14 +20,17 @@ var changeButton = document.querySelector('.change-game');
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
+
 //Event Listeners
+
+//This should happen in game class
 classicButton.addEventListener('click', function() {
-  currentGame.gameType = 'classic';
+  currentGame.determineGameType(event);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.gameType = 'spicy';
+  currentGame.determineGameType(event);
   showGamePage();
 });
 
@@ -55,6 +58,8 @@ window.addEventListener('load', function() {
 
 tokenButton.addEventListener('click', displayUserToken);
 
+changeButton.addEventListener('click', toggleChangeButton);
+
 //Event Handlers & Functions
 function showElement(elements) {
   for (var i = 0; i < elements.length; i++) {
@@ -77,6 +82,15 @@ function showGamePage() {
     showElement([spicyImages]);
   }
 };
+
+// function showNewGamePage() {
+//   showElement([fighterText]);
+//   hideElement([classicButton, spicyButton, subTitle, tokenButton]);
+//   if (currentGame.gameType === 'classic') {
+//     showElement([spicyImages]);
+//   } else if (currentGame.gameType === 'spicy') {
+//     showElement([classImages]);
+// };
 
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
@@ -158,4 +172,10 @@ function changeTokenAlt() {
   } else if (currentGame.alien.token === './assets/blue-alien.png') {
     userCharacter.alt = 'little alien in ship';
   }
+};
+
+function toggleChangeButton() {
+  currentGame.switchGameType();
+  hideElement([changeButton, userImage, computerImage, clearButton, winResult]);
+  showGamePage();
 };
