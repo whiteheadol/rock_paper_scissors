@@ -69,7 +69,7 @@ class Game {
 
   determineWinner() {
     if (this.alienChoice === this.computerChoice) {
-      this.updateWins();
+      this.winner = '';
       return this.isDraw = true;
     } else if (this.alienChoice === 'rock' && (this.computerChoice === 'scissors' || this.computerChoice === 'lizard')) {
       this.winner = 'alien';
@@ -98,4 +98,13 @@ class Game {
     }
   }
 
+  changeToken() {
+    if (currentGame.alien.token === './assets/black-and-white-alien.png') {
+      currentGame.alien.token = './assets/pink-alien.png';
+    } else if (currentGame.alien.token === './assets/pink-alien.png') {
+      currentGame.alien.token = './assets/blue-alien.png';
+    } else if (currentGame.alien.token === './assets/blue-alien.png') {
+      currentGame.alien.token = './assets/black-and-white-alien.png';
+    }
+  }
 }
