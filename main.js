@@ -83,6 +83,15 @@ function showGamePage() {
   }
 };
 
+// function showNewGamePage() {
+//   showElement([fighterText]);
+//   hideElement([classicButton, spicyButton, subTitle, tokenButton]);
+//   if (currentGame.gameType === 'classic') {
+//     showElement([spicyImages]);
+//   } else if (currentGame.gameType === 'spicy') {
+//     showElement([classImages]);
+// };
+
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
   hideElement([fighterText]);
@@ -166,6 +175,7 @@ function changeTokenAlt() {
 };
 
 function toggleChangeButton() {
-  currentGame.showGamePage();
-  hideElements([changeButton]);
-}
+  currentGame.switchGameType();
+  hideElement([changeButton, userImage, computerImage, clearButton, winResult]);
+  showGamePage();
+};
