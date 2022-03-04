@@ -2,10 +2,6 @@
 var currentGame = new Game();
 
 //Query Selectors
-//I don't think I need to use these after all, but will not delete them until I've added
-//game changing functionality:
-// var gameOptionPage = document.querySelector('.game-options');
-// var gameOption = document.querySelectorAll('.game-box');
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
 var userWins = document.querySelector('.user-wins');
@@ -13,7 +9,7 @@ var computerWins = document.querySelector('.computer-wins');
 var clearButton = document.querySelector('.clear-button');
 var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
-var winResults = document.querySelector('.win-results');
+var winResult = document.querySelector('.win-results');
 var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
 
@@ -60,40 +56,46 @@ window.addEventListener('load', function() {
 tokenButton.addEventListener('click', displayUserToken);
 
 //Event Handlers & Functions
+function showElement(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.remove('hidden');
+  }
+};
+
+function hideElement(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.add('hidden');
+  }
+}
+
 function showGamePage() {
-  classicButton.classList.add('hidden');
-  spicyButton.classList.add('hidden');
-  subTitle.classList.add('hidden');
-  fighterText.classList.remove('hidden');
-  tokenButton.classList.add('hidden');
+  showElement([fighterText]);
+  hideElement([classicButton, spicyButton, subTitle, tokenButton]);
   if (currentGame.gameType === 'classic') {
-    classicImages.classList.remove('hidden');
+    showElement([classicImages]);
   } else if (currentGame.gameType === 'spicy') {
-    spicyImages.classList.remove('hidden');
+    showElement([spicyImages]);
   }
 };
 
 function displayWins() {
-    clearButton.classList.remove('hidden');
-    fighterText.classList.add('hidden');
-    winResults.classList.remove('hidden');
-    changeButton.classList.remove('hidden');
-    resetBoard();
-    updateWinText();
-    updateSidebarWins();
-    displayWinIcons();
-  };
+  showElement([clearButton, winResult, changeButton]);
+  hideElement([fighterText]);
+  resetBoard();
+  updateWinText();
+  updateSidebarWins();
+  displayWinIcons();
+};
 
 function updateWinText() {
    if (currentGame.winner === 'alien') {
-    winResults.innerText = 'You won this round!';
+    winResult.innerText = 'You won this round!';
   } else if (currentGame.winner === 'computer') {
-    winResults.innerText = 'The computer won this round.';
+    winResult.innerText = 'The computer won this round.';
   } else {
-    winResults.innerText = 'This round was a tie, try again!';
+    winResult.innerText = 'This round was a tie, try again!';
   }
-  userImage.classList.remove('hidden');
-  computerImage.classList.remove('hidden');
+  showElement([userImage, computerImage]);
 };
 
 //Should this function be in the game class?
@@ -123,27 +125,25 @@ function updateSidebarWins() {
 
 function resetBoard() {
   if (currentGame.gameType === 'classic') {
-    classicImages.classList.add('hidden');
+    hideElement([classicImages]);
   } else if (currentGame.gameType === 'spicy') {
-    spicyImages.classList.add('hidden');
+    hideElement([spicyImages]);
   }
 };
 
 function toggleChooseAgainButton() {
-  winResults.classList.add('hidden');
-  clearButton.classList.add('hidden');
+  hideElement([winResult, clearButton]);
   if (currentGame.gameType === 'classic') {
-    classicImages.classList.remove('hidden');
+    showElement([classicImages]);
   } else if (currentGame.gameType === 'spicy') {
-    spicyImages.classList.remove('hidden');
+    showElement([computerImage]);
   }
-  userImage.classList.add('hidden');
-  computerImage.classList.add('hidden');
+  hideElement([userImage, computerImage]);
   showGamePage();
 };
 
 function displayUserToken() {
-  currentGame.changeToken();
+  currentGame.alien.changeToken();
   changeTokenAlt();
   userCharacter.src = currentGame.alien.token;
 };
