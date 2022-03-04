@@ -9,10 +9,20 @@ class Game {
     this.winner = '';
   }
 
+//Refactor this!!
   assignPlayerTokens() {
     this.alien.token = './assets/black-and-white-alien.png';
     this.computer.token = './assets/482469.png';
   }
+
+determineGameType(event) {
+  var gameType = event.target.id;
+  if (gameType === 'classic') {
+    this.gameType = 'classic';
+  } else if (gameType === 'spicy') {
+    this.gameType = 'spicy';
+  }
+}
 
 //Can make parameter alienWeapon - event.target.id is the argument passed in in main
   assignAlienChoice(event) {

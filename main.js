@@ -20,14 +20,17 @@ var changeButton = document.querySelector('.change-game');
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
+
 //Event Listeners
+
+//This should happen in game class
 classicButton.addEventListener('click', function() {
-  currentGame.gameType = 'classic';
+  currentGame.determineGameType(event);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.gameType = 'spicy';
+  currentGame.determineGameType(event);
   showGamePage();
 });
 
@@ -54,6 +57,8 @@ window.addEventListener('load', function() {
 })
 
 tokenButton.addEventListener('click', displayUserToken);
+
+changeButton.addEventListener('click', toggleChangeButton);
 
 //Event Handlers & Functions
 function showElement(elements) {
@@ -159,3 +164,8 @@ function changeTokenAlt() {
     userCharacter.alt = 'little alien in ship';
   }
 };
+
+function toggleChangeButton() {
+  currentGame.showGamePage();
+  hideElements([changeButton]);
+}
