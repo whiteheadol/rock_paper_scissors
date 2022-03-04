@@ -33,7 +33,7 @@ classicButton.addEventListener('click', function() {
 spicyButton.addEventListener('click', function() {
   currentGame.gameType = 'spicy';
   showGamePage();
-})
+});
 
 classicImages.addEventListener('click', function() {
   currentGame.assignAlienChoice(event);
@@ -57,7 +57,7 @@ window.addEventListener('load', function() {
   currentGame.assignPlayerTokens();
 })
 
-tokenButton.addEventListener('click', changeToken);
+tokenButton.addEventListener('click', displayUserToken);
 
 //Event Handlers & Functions
 function showGamePage() {
@@ -114,7 +114,7 @@ function updateWinIcon(choice) {
 function displayWinIcons() {
   userImage.src = updateWinIcon(currentGame.alienChoice);
   computerImage.src = updateWinIcon(currentGame.computerChoice)
-}
+};
 
 function updateSidebarWins() {
   userWins.innerText = `${currentGame.alien.wins}`;
@@ -142,26 +142,11 @@ function toggleChooseAgainButton() {
   showGamePage();
 };
 
-//I want to ask about this function
-//It is only updating the content of something in the game and player classes,
-//Should I move this to the game.js file? Or leave it here?
-//Main.js is specifically for the DOM
-//move this function to game.js
-function changeToken() {
-  if (currentGame.alien.token === './assets/black-and-white-alien.png') {
-    currentGame.alien.token = './assets/pink-alien.png';
-  } else if (currentGame.alien.token === './assets/pink-alien.png') {
-    currentGame.alien.token = './assets/blue-alien.png';
-  } else if (currentGame.alien.token === './assets/blue-alien.png') {
-    currentGame.alien.token = './assets/black-and-white-alien.png';
-  }
-  changeTokenAlt();
-  displayUserToken();
-};
-
 function displayUserToken() {
+  currentGame.changeToken();
+  changeTokenAlt();
   userCharacter.src = currentGame.alien.token;
-}
+};
 
 function changeTokenAlt() {
   if (currentGame.alien.token === './assets/black-and-white-alien.png') {

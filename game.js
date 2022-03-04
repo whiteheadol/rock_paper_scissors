@@ -69,7 +69,7 @@ class Game {
 
   determineWinner() {
     if (this.alienChoice === this.computerChoice) {
-      this.updateWins();
+      this.winner = '';
       return this.isDraw = true;
     } else if (this.alienChoice === 'rock' && (this.computerChoice === 'scissors' || this.computerChoice === 'lizard')) {
       this.winner = 'alien';
@@ -98,4 +98,15 @@ class Game {
     }
   }
 
+//I don't know if I want to turn these into an array? It could make this
+//function cleaner, but then I add another variable to deal with?
+  changeToken() {
+    if (this.alien.token === './assets/black-and-white-alien.png') {
+      this.alien.token = './assets/pink-alien.png';
+    } else if (this.alien.token === './assets/pink-alien.png') {
+      this.alien.token = './assets/blue-alien.png';
+    } else if (this.alien.token === './assets/blue-alien.png') {
+      this.alien.token = './assets/black-and-white-alien.png';
+    }
+  }
 }
