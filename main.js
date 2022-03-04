@@ -21,6 +21,9 @@ var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.character1');
 var changeButton = document.querySelector('.change-game');
 
+var userImage = document.querySelector('#userChoice');
+var computerImage = document.querySelector('#computerChoice');
+
 //Event Listeners
 classicButton.addEventListener('click', function() {
   currentGame.gameType = 'classic';
@@ -78,6 +81,7 @@ function displayWins() {
     resetBoard();
     updateWinText();
     updateSidebarWins();
+    displayWinIcons();
   };
 
 function updateWinText() {
@@ -88,12 +92,34 @@ function updateWinText() {
   } else {
     winResults.innerText = 'This round was a tie, try again!';
   }
+  userImage.classList.remove('hidden');
+  computerImage.classList.remove('hidden');
 };
+
+//Should this function be in the game class?
+function updateWinIcon(choice) {
+  if (choice === 'rock') {
+    return './assets/happy-rocks.png';
+  } else if (choice === 'paper') {
+    return './assets/happy-paper.png';
+  } else if (choice === 'scissors') {
+    return './assets/happy-scissors.png';
+  } else if (choice === 'lizard') {
+    return './assets/lizard.png';
+  } else if (choice === 'alien') {
+    return './assets/happy-alien.png';
+  }
+};
+
+function displayWinIcons() {
+  userImage.src = updateWinIcon(currentGame.alienChoice);
+  computerImage.src = updateWinIcon(currentGame.computerChoice)
+}
 
 function updateSidebarWins() {
   userWins.innerText = `${currentGame.alien.wins}`;
   computerWins.innerText = `${currentGame.computer.wins}`;
-}
+};
 
 function resetBoard() {
   if (currentGame.gameType === 'classic') {
@@ -111,6 +137,8 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     spicyImages.classList.remove('hidden');
   }
+  userImage.classList.add('hidden');
+  computerImage.classList.add('hidden');
   showGamePage();
 };
 
@@ -118,6 +146,7 @@ function toggleChooseAgainButton() {
 //It is only updating the content of something in the game and player classes,
 //Should I move this to the game.js file? Or leave it here?
 //Main.js is specifically for the DOM
+//move this function to game.js
 function changeToken() {
   if (currentGame.alien.token === './assets/black-and-white-alien.png') {
     currentGame.alien.token = './assets/pink-alien.png';
@@ -142,4 +171,4 @@ function changeTokenAlt() {
   } else if (currentGame.alien.token === './assets/blue-alien.png') {
     userCharacter.alt = 'little alien in ship';
   }
-}
+};
