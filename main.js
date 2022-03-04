@@ -115,7 +115,9 @@ function updateWinIcon(choice) {
 
 function displayWinIcons() {
   userImage.src = updateWinIcon(currentGame.alienChoice);
+  userImage.alt = `happy ${currentGame.alienChoice}`;
   computerImage.src = updateWinIcon(currentGame.computerChoice)
+  computerImage.alt = `happy ${currentGame.computerChoice}`;
 };
 
 function updateSidebarWins() {
