@@ -14,6 +14,7 @@ class Game {
     this.computer.token = './assets/482469.png';
   }
 
+//Can make parameter alienWeapon - event.target.id is the argument passed in in main
   assignAlienChoice(event) {
     var alienWeapon = event.target.id;
       if (alienWeapon === 'rock') {

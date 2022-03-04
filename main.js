@@ -142,4 +142,4 @@ function changeTokenAlt() {
   } else if (currentGame.alien.token === './assets/blue-alien.png') {
     userCharacter.alt = 'little alien in ship';
   }
-}
+};
