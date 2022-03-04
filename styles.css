@@ -168,10 +168,10 @@ button:hover {
   margin-bottom: 180px;
 }
 
-.weapon1, .weapon2 {
+.weapon1, .weapon2, .weapon-win {
   height: 200px;
   margin: 20px 60px;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: .4s
 }
 

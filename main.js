@@ -21,6 +21,9 @@ var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.character1');
 var changeButton = document.querySelector('.change-game');
 
+var userImage = document.querySelector('#userChoice');
+var computerImage = document.querySelector('#computerChoice');
+
 //Event Listeners
 classicButton.addEventListener('click', function() {
   currentGame.gameType = 'classic';
@@ -88,6 +91,8 @@ function updateWinText() {
   } else {
     winResults.innerText = 'This round was a tie, try again!';
   }
+  userImage.classList.remove('hidden');
+  computerImage.classList.remove('hidden');
 };
 
 function updateSidebarWins() {
@@ -111,6 +116,8 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     spicyImages.classList.remove('hidden');
   }
+  userImage.classList.add('hidden');
+  computerImage.classList.add('hidden');
   showGamePage();
 };
 
