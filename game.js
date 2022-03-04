@@ -15,6 +15,7 @@ class Game {
     this.computer.token = './assets/482469.png';
   }
 
+//Use parameter/argument here!
   determineGameType(event) {
    var gameType = event.target.id;
    if (gameType === 'classic') {
@@ -43,7 +44,7 @@ class Game {
         this.alienChoice = 'scissors';
       }
     }
-
+//Another spt for this parameter/argument to get rid of DOM interaction here
     assignAlienChoiceSpicy(event) {
       var alienWeaponS = event.target.id;
       if (alienWeaponS === 'sRock') {
