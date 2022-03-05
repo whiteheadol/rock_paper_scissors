@@ -22,15 +22,13 @@ var computerImage = document.querySelector('#computerChoice');
 
 
 //Event Listeners
-
-//This should happen in game class
 classicButton.addEventListener('click', function() {
-  currentGame.determineGameType(event);
+  currentGame.determineGameType(event.target.id);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.determineGameType(event);
+  currentGame.determineGameType(event.target.id);
   showGamePage();
 });
 
@@ -82,15 +80,6 @@ function showGamePage() {
     showElement([spicyImages]);
   }
 };
-
-// function showNewGamePage() {
-//   showElement([fighterText]);
-//   hideElement([classicButton, spicyButton, subTitle, tokenButton]);
-//   if (currentGame.gameType === 'classic') {
-//     showElement([spicyImages]);
-//   } else if (currentGame.gameType === 'spicy') {
-//     showElement([classImages]);
-// };
 
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
