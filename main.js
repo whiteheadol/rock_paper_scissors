@@ -22,15 +22,13 @@ var computerImage = document.querySelector('#computerChoice');
 
 
 //Event Listeners
-
-//This should happen in game class
 classicButton.addEventListener('click', function() {
-  currentGame.determineGameType(event);
+  currentGame.determineGameType(event.target.id);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.determineGameType(event);
+  currentGame.determineGameType(event.target.id);
   showGamePage();
 });
 
@@ -58,7 +56,10 @@ window.addEventListener('load', function() {
 
 tokenButton.addEventListener('click', displayUserToken);
 
-changeButton.addEventListener('click', toggleChangeButton);
+changeButton.addEventListener('click', function() {
+  toggleChangeButton();
+  // hideElement([changeButton]);
+});
 
 //Event Handlers & Functions
 function showElement(elements) {
@@ -82,15 +83,6 @@ function showGamePage() {
     showElement([spicyImages]);
   }
 };
-
-// function showNewGamePage() {
-//   showElement([fighterText]);
-//   hideElement([classicButton, spicyButton, subTitle, tokenButton]);
-//   if (currentGame.gameType === 'classic') {
-//     showElement([spicyImages]);
-//   } else if (currentGame.gameType === 'spicy') {
-//     showElement([classImages]);
-// };
 
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
@@ -154,7 +146,7 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     showElement([computerImage]);
   }
-  hideElement([userImage, computerImage]);
+  hideElement([userImage, computerImage, changeButton]);
   showGamePage();
 };
 
@@ -176,6 +168,6 @@ function changeTokenAlt() {
 
 function toggleChangeButton() {
   currentGame.switchGameType();
-  hideElement([changeButton, userImage, computerImage, clearButton, winResult]);
+  hideElement([userImage, computerImage, clearButton, winResult, changeButton]);
   showGamePage();
 };
