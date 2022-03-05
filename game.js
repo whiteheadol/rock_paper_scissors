@@ -31,17 +31,15 @@ class Game {
    }
  }
 
-//Can make parameter alienWeapon - event.target.id is the argument passed in in main
-  assignAlienChoice(event) {
-    var alienWeapon = event.target.id;
-      if (alienWeapon === 'rock') {
-        this.alienChoice = 'rock';
-      } else if (alienWeapon === 'paper') {
-        this.alienChoice = 'paper';
-      } else if (alienWeapon = 'scissors') {
-        this.alienChoice = 'scissors';
-      }
+  assignAlienChoice(eventId) {
+    if (eventId === 'rock') {
+      this.alienChoice = 'rock';
+    } else if (eventId === 'paper') {
+      this.alienChoice = 'paper';
+    } else if (eventId = 'scissors') {
+      this.alienChoice = 'scissors';
     }
+  }
 //Another spt for this parameter/argument to get rid of DOM interaction here
     assignAlienChoiceSpicy(event) {
       var alienWeaponS = event.target.id;

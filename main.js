@@ -33,7 +33,7 @@ spicyButton.addEventListener('click', function() {
 });
 
 classicImages.addEventListener('click', function() {
-  currentGame.assignAlienChoice(event);
+  currentGame.assignAlienChoice(event.target.id);
   currentGame.assignComputerChoice();
   currentGame.determineWinner();
   setTimeout(displayWins,600);
