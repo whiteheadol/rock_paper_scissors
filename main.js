@@ -56,7 +56,10 @@ window.addEventListener('load', function() {
 
 tokenButton.addEventListener('click', displayUserToken);
 
-changeButton.addEventListener('click', toggleChangeButton);
+changeButton.addEventListener('click', function() {
+  toggleChangeButton();
+  // hideElement([changeButton]);
+});
 
 //Event Handlers & Functions
 function showElement(elements) {
@@ -143,7 +146,7 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     showElement([computerImage]);
   }
-  hideElement([userImage, computerImage]);
+  hideElement([userImage, computerImage, changeButton]);
   showGamePage();
 };
 
@@ -165,6 +168,6 @@ function changeTokenAlt() {
 
 function toggleChangeButton() {
   currentGame.switchGameType();
-  hideElement([changeButton, userImage, computerImage, clearButton, winResult]);
+  hideElement([userImage, computerImage, clearButton, winResult, changeButton]);
   showGamePage();
 };

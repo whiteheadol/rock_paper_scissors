@@ -15,7 +15,6 @@ class Game {
     this.computer.token = './assets/482469.png';
   }
 
-//Use parameter/argument here!
   determineGameType(eventId) {
    if (eventId === 'classic') {
     this.gameType = 'classic';
