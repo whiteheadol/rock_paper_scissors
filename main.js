@@ -14,7 +14,7 @@ var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
 
 var tokenButton = document.querySelector('.token-changer');
-var userCharacter = document.querySelector('.character1');
+var userCharacter = document.querySelector('.token-1');
 var changeButton = document.querySelector('.change-game');
 
 var userImage = document.querySelector('#userChoice');

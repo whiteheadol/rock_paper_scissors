@@ -21,11 +21,6 @@ h2, h3 {
   margin-top: 20px;
 }
 
-h4 {
-  font-size: 40px;
-  margin-top: 5px;
-}
-
 p {
   font-size: 20px;
   margin: 5px;
@@ -49,16 +44,6 @@ button {
   padding: 10px 30px;
 }
 
-.token-changer, .change-game {
-  font-size: 20px;
-  margin-top: 30px;
-  height: 70px;
-  width: 180px;
-}
-
-.token-changer:hover, .change-game:hover {
-  font-size: 22px;
-}
 
 button:hover {
   background-color: #72baad;
@@ -67,6 +52,11 @@ button:hover {
 }
 
 /* SIDEBARS */
+h4 {
+  font-size: 40px;
+  margin-top: 5px;
+}
+
 .user-text, .computer-text {
   align-items: center;
   display: flex;
@@ -85,10 +75,21 @@ button:hover {
   border-right: none;
 }
 
-.character1, .character2 {
+.token-1, .token-2 {
   height:80px;
   margin: 10px;
   background-color: #d8ece9;
+}
+
+.token-changer, .change-game {
+  font-size: 20px;
+  margin-top: 30px;
+  height: 70px;
+  width: 180px;
+}
+
+.token-changer:hover, .change-game:hover {
+  font-size: 22px;
 }
 
 /* MAIN DISPLAY */
@@ -162,14 +163,14 @@ button:hover {
   margin-bottom: 180px;
 }
 
-.weapon1, .weapon2, .weapon-win {
+.weapon-1, .weapon-2, .weapon-win {
   height: 200px;
   margin: 20px 40px;
   padding: 20px;
   transition: 0.6s;
 }
 
-.weapon1:hover, .weapon2:hover {
+.weapon-1:hover, .weapon-2:hover {
   transform: scale(1.4);
 }
 
