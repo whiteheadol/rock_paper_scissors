@@ -10,25 +10,23 @@ var clearButton = document.querySelector('.clear-button');
 var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
 var winResult = document.querySelector('.win-results');
+//Try to use the id instead, get rid of this class
 var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
-
 var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.token-1');
 var changeButton = document.querySelector('.change-game');
-
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
-
 //Event Listeners
 classicButton.addEventListener('click', function() {
-  currentGame.determineGameType(event.target.id);
+  currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.determineGameType(event.target.id);
+  currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
 });
 
@@ -50,16 +48,15 @@ clearButton.addEventListener('click', function() {
   setTimeout(toggleChooseAgainButton, 300);
 });
 
+//Can pass tokens in as parameters when instantiating in game class to avoid
+//this anonymous function
 window.addEventListener('load', function() {
   currentGame.assignPlayerTokens();
-})
+});
 
 tokenButton.addEventListener('click', displayUserToken);
 
-changeButton.addEventListener('click', function() {
-  toggleChangeButton();
-  // hideElement([changeButton]);
-});
+changeButton.addEventListener('click', toggleChangeButton);
 
 //Event Handlers & Functions
 function showElement(elements) {
@@ -72,7 +69,7 @@ function hideElement(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
   }
-}
+};
 
 function showGamePage() {
   showElement([fighterText]);
@@ -84,6 +81,9 @@ function showGamePage() {
   }
 };
 
+//Would it make more sense to invoke some of these functions in other functions?
+//This looks like a mess
+//Should I invoke more of them in my eventListener?
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
   hideElement([fighterText]);
@@ -105,6 +105,7 @@ function updateWinText() {
 };
 
 //Should this function be in the game class?
+//I'm not reassigning anything, just trying to break a long function up
 function updateWinIcon(choice) {
   if (choice === 'rock') {
     return './assets/happy-rocks.png';

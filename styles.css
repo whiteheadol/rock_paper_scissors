@@ -1,3 +1,7 @@
+/* * {
+  border: 2px solid pink;
+} */
+
 html, body {
   height: 100%;
   width: 100%;
@@ -23,7 +27,7 @@ h2, h3 {
 
 p {
   font-size: 20px;
-  margin: 5px;
+  margin: 5px 5px 20px 5px;
 }
 
 button {
@@ -101,20 +105,20 @@ h4 {
   width: 70%;
 }
 
-.classic-game {
+/* .classic-game {
   height: 30%;
   margin-top: 80px;
   width: 40%;
-}
+} */
 
 .weapon-images {
   display: flex;
 }
 
-.spicy-game {
-  height: 40%;
-  width: 60%;
-}
+/* .spicy-game {
+  height: 100%;
+  width: 100%;
+} */
 
 .game-options {
   align-items: center;
@@ -131,6 +135,24 @@ h4 {
   display: flex;
   flex-direction: column;
   margin: 40px;
+  width: 100%;
+}
+
+.classic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38%;
+  width: 44%;
+  margin: 20px;
+}
+
+.spicy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38%;
+  width: 44%;
 }
 
 .box-title {
