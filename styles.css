@@ -1,38 +1,24 @@
-/* * {
-  border: 2px solid pink;
-} */
-
 html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
-  display: flex;
-  margin: 0;
   background-color: #b6dbd5;
+  display: flex;
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 h1 {
   font-size: 60px;
-  margin: 0;
   letter-spacing: 6px;
+  margin: 0;
 }
 
-h2 {
+h2, h3 {
   font-size: 30px;
   margin-top: 20px;
-}
-
-h3 {
-  font-size: 30px;
-  margin: 20px 0;
-}
-
-h4 {
-  font-size: 40px;
-  margin-top: 5px;
 }
 
 p {
@@ -41,29 +27,23 @@ p {
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
   border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .token-changer, .clear-button, .change-game {
   background-color: #a5d3cb;
-  color: white;
-  border-radius: 5px;
-  border: none;
   border: 2px solid #72baad;
+  border-radius: 5px;
+  color: white;
 }
 
 .clear-button {
   font-size: 30px;
-  padding: 10px 30px;
   margin-bottom: 500px;
+  padding: 10px 30px;
 }
 
-.token-changer, .change-game {
-  margin-top: 30px;
-  height: 40px;
-  width: 160px;
-}
 
 button:hover {
   background-color: #72baad;
@@ -72,45 +52,59 @@ button:hover {
 }
 
 /* SIDEBARS */
+h4 {
+  font-size: 40px;
+  margin-top: 5px;
+}
+
 .user-text, .computer-text {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 20px;
 }
 
-.user-sidebar {
+.user-sidebar, .computer-sidebar {
+  background-color: #d8ece9;
   border-right: 5px solid #72baad;
+  width: 15%;
 }
 
 .computer-sidebar {
   border-left: 5px solid #72baad;
+  border-right: none;
 }
 
-.user-sidebar, .computer-sidebar {
-  width: 15%;
-  background-color: #d8ece9;
-}
-
-.character1, .character2 {
+.token-1, .token-2 {
   height:80px;
   margin: 10px;
   background-color: #d8ece9;
 }
 
+.token-changer, .change-game {
+  font-size: 20px;
+  margin-top: 30px;
+  height: 70px;
+  width: 180px;
+}
+
+.token-changer:hover, .change-game:hover {
+  font-size: 22px;
+}
+
 /* MAIN DISPLAY */
 .main-page {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  align-items: center;
   justify-content: flex-start;
+  width: 70%;
 }
 
 .classic-game {
-  width: 40%;
   height: 30%;
   margin-top: 80px;
+  width: 40%;
 }
 
 .weapon-images {
@@ -118,50 +112,50 @@ button:hover {
 }
 
 .spicy-game {
-  width: 60%;
   height: 40%;
+  width: 60%;
 }
 
 .game-options {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100%;
-  align-items: center;
+  width: 100%;
 }
 
 .game-box {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: #a5d3cb;
   border: 3px solid #72baad;
+  display: flex;
+  flex-direction: column;
   margin: 40px;
 }
 
 .box-title {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .mini-image {
   height: 40px;
-  weight: 40px;
   margin: 20px;
+  weight: 40px;
 }
 
 .title {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 40px;
 }
 
 .classic-images, .spicy-images {
-  margin-bottom: 360px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 360px;
   width: 80%;
 }
 
@@ -169,18 +163,14 @@ button:hover {
   margin-bottom: 180px;
 }
 
-.weapon1, .weapon2, .weapon-win {
+.weapon-1, .weapon-2, .weapon-win {
   height: 200px;
   margin: 20px 40px;
-  transition: 0.6s;
   padding: 20px;
+  transition: 0.6s;
 }
 
-.weapon1:hover {
-  transform: scale(1.4);
-}
-
-.weapon2:hover {
+.weapon-1:hover, .weapon-2:hover {
   transform: scale(1.4);
 }
 
