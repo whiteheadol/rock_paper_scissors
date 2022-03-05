@@ -40,7 +40,7 @@ classicImages.addEventListener('click', function() {
 });
 
 spicyImages.addEventListener('click', function() {
-  currentGame.assignAlienChoiceSpicy(event);
+  currentGame.assignAlienChoiceSpicy(event.target.id);
   currentGame.assignComputerChoiceSpicy();
   currentGame.determineWinner();
   setTimeout(displayWins, 600);

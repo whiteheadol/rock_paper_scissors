@@ -15,10 +15,10 @@ class Game {
     this.computer.token = './assets/482469.png';
   }
 
-  determineGameType(eventId) {
-   if (eventId === 'classic') {
+  determineGameType(gameId) {
+   if (gameId === 'classic') {
     this.gameType = 'classic';
-  } else if (eventId === 'spicy') {
+  } else if (gameId === 'spicy') {
     this.gameType = 'spicy';
    }
  }
@@ -31,27 +31,26 @@ class Game {
    }
  }
 
-  assignAlienChoice(eventId) {
-    if (eventId === 'rock') {
+  assignAlienChoice(weaponId) {
+    if (weaponId === 'rock') {
       this.alienChoice = 'rock';
-    } else if (eventId === 'paper') {
+    } else if (weaponId === 'paper') {
       this.alienChoice = 'paper';
-    } else if (eventId = 'scissors') {
+    } else if (weaponId = 'scissors') {
       this.alienChoice = 'scissors';
     }
   }
-//Another spt for this parameter/argument to get rid of DOM interaction here
-    assignAlienChoiceSpicy(event) {
-      var alienWeaponS = event.target.id;
-      if (alienWeaponS === 'sRock') {
+
+    assignAlienChoiceSpicy(weaponId) {
+      if (weaponId === 'sRock') {
         this.alienChoice = 'rock';
-      } else if (alienWeaponS === 'sPaper') {
+      } else if (weaponId === 'sPaper') {
         this.alienChoice = 'paper';
-      } else if (alienWeaponS === 'sScissors') {
+      } else if (weaponId === 'sScissors') {
         this.alienChoice = 'scissors';
-      } else if (alienWeaponS === 'sLizard') {
+      } else if (weaponId === 'sLizard') {
         this.alienChoice = 'lizard';
-      } else if (alienWeaponS === 'sAlien') {
+      } else if (weaponId === 'sAlien') {
         this.alienChoice = 'alien';
       }
     }
