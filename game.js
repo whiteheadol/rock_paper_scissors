@@ -16,9 +16,9 @@ class Game {
   }
 
   determineGameType(gameId) {
-   if (gameId === 'classic') {
+   if (gameId === 'classic' || gameId === 'boxTitleClassic' || gameId ==='buttonClassic') {
     this.gameType = 'classic';
-  } else if (gameId === 'spicy') {
+  } else if (gameId === 'spicy' || gameId === 'boxTitleSpicy' || gameId === 'buttonSpicy') {
     this.gameType = 'spicy';
    }
  }
@@ -41,19 +41,19 @@ class Game {
     }
   }
 
-    assignAlienChoiceSpicy(weaponId) {
-      if (weaponId === 'sRock') {
-        this.alienChoice = 'rock';
-      } else if (weaponId === 'sPaper') {
-        this.alienChoice = 'paper';
-      } else if (weaponId === 'sScissors') {
-        this.alienChoice = 'scissors';
-      } else if (weaponId === 'sLizard') {
-        this.alienChoice = 'lizard';
-      } else if (weaponId === 'sAlien') {
-        this.alienChoice = 'alien';
-      }
+  assignAlienChoiceSpicy(weaponId) {
+    if (weaponId === 'sRock') {
+      this.alienChoice = 'rock';
+    } else if (weaponId === 'sPaper') {
+      this.alienChoice = 'paper';
+    } else if (weaponId === 'sScissors') {
+      this.alienChoice = 'scissors';
+    } else if (weaponId === 'sLizard') {
+      this.alienChoice = 'lizard';
+    } else if (weaponId === 'sAlien') {
+      this.alienChoice = 'alien';
     }
+  }
 
   assignComputerChoice() {
     var computerNum = Math.floor(Math.random() * 3);
@@ -103,6 +103,12 @@ class Game {
     this.isDraw = false;
     this.updateWins();
   }
+
+//Ask about combining lines 33-35 of main file into another method, then just calling
+//the one game method in main?
+  // assignChoicesAndWinner() {
+  //
+  // }
 
   updateWins() {
     if (this.winner === 'alien') {
