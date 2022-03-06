@@ -103,6 +103,7 @@ h4 {
   flex-direction: column;
   justify-content: flex-start;
   width: 70%;
+  /* height: 100vh; */
 }
 
 .weapon-images {
@@ -193,7 +194,7 @@ h4 {
   transition: .4s;
 }
 
-.win-results {
+.win-result {
   font-size: 40px;
   margin-top: 80px;
 }
@@ -202,6 +203,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* height: 100vh; */
 }
 
 .hidden {
