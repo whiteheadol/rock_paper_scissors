@@ -9,9 +9,11 @@ var computerWins = document.querySelector('.computer-wins');
 var clearButton = document.querySelector('.clear-button');
 var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
+//Should make this non plural, not an array:
 var winResult = document.querySelector('.win-results');
-//Try to use the id instead, get rid of this class
+//Try to use the id instead, get rid of this class:
 var classicButton = document.querySelector('.classic-game');
+//Same refactor issue here:
 var spicyButton = document.querySelector('.spicy-game');
 var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.token-1');

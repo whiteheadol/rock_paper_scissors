@@ -105,26 +105,15 @@ h4 {
   width: 70%;
 }
 
-/* .classic-game {
-  height: 30%;
-  margin-top: 80px;
-  width: 40%;
-} */
-
 .weapon-images {
   display: flex;
 }
-
-/* .spicy-game {
-  height: 100%;
-  width: 100%;
-} */
 
 .game-options {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 78%;
   width: 100%;
 }
 
@@ -138,26 +127,23 @@ h4 {
   width: 100%;
 }
 
-.classic-button {
-  display: flex;
+.classic-button, .spicy-button {
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 38%;
-  width: 44%;
+  justify-content: center;
   margin: 20px;
+  width: 44%;
 }
 
 .spicy-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 38%;
-  width: 44%;
+  width: 60%;
 }
 
 .box-title {
   align-items: center;
   display: flex;
+  margin: -10px;
 }
 
 .mini-image {
