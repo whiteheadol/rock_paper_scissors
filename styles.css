@@ -1,7 +1,3 @@
-/* * {
-  border: 2px solid pink;
-} */
-
 html, body {
   height: 100%;
   width: 100%;
@@ -199,9 +195,9 @@ h4 {
 }
 
 .refresh-page {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 64%;
 }
 
