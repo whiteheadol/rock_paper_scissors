@@ -1,7 +1,7 @@
-//Global Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Global Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var currentGame = new Game();
 
-//Query Selectors
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Query Selectors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var classicImages = document.querySelector('.classic-images');
 var spicyImages = document.querySelector('.spicy-images');
 var userWins = document.querySelector('.user-wins');
@@ -18,7 +18,7 @@ var changeButton = document.querySelector('.change-game');
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
-//Event Listeners
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Event Listeners ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 window.addEventListener('load', function() {
   currentGame.assignTokens();
 });
@@ -55,7 +55,7 @@ changeButton.addEventListener('click', function() {
   toggleChangeButton();
 });
 
-//Event Handlers & Functions
+// ~~~~~~~~~~~~~~~~~~~~~~ Event Handlers & Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function showElement(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.remove('hidden');
