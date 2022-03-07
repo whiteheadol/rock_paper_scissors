@@ -38,13 +38,6 @@ button {
   color: white;
 }
 
-.clear-button {
-  font-size: 30px;
-  margin-bottom: 500px;
-  padding: 10px 30px;
-}
-
-
 button:hover {
   background-color: #72baad;
   transform: scale(1.2);
@@ -81,18 +74,28 @@ h4 {
   background-color: #d8ece9;
 }
 
-.token-changer, .change-game {
+.token-changer {
   font-size: 20px;
   height: 70px;
   margin-top: 30px;
   width: 180px;
 }
 
-.token-changer:hover, .change-game:hover {
+.token-changer:hover {
   font-size: 22px;
 }
 
 /* MAIN DISPLAY */
+.change-game {
+  margin-top: -450px;
+}
+
+.clear-button, .change-game {
+  font-size: 30px;
+  margin-bottom: 500px;
+  padding: 10px 30px;
+}
+
 .main-page {
   align-items: center;
   display: flex;
@@ -179,6 +182,7 @@ h4 {
 }
 
 .weapon-win {
+  margin-top: -60px;
   padding: 20px 10px 40px 10px;
 }
 
