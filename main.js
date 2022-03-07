@@ -21,17 +21,16 @@ var computerImage = document.querySelector('#computerChoice');
 
 //Event Listeners
 classicButton.addEventListener('click', function() {
-  currentGame.determineGameType(event.target.id);
+  currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
 });
 
 spicyButton.addEventListener('click', function() {
-  currentGame.determineGameType(event.target.id);
+  currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
 });
 
 classicImages.addEventListener('click', function() {
-  // currentGame.assignAlienChoice(event.target.id);
   currentGame.alien.assignAlienChoice(event.target.id);
   currentGame.computer.assignComputerChoice();
   currentGame.determineWinner();
@@ -39,9 +38,8 @@ classicImages.addEventListener('click', function() {
 });
 
 spicyImages.addEventListener('click', function() {
-  // currentGame.assignAlienChoiceSpicy(event.target.id);
-  currentGame.alien.assignAlienChoiceSpicy(event.target.id);
-  currentGame.computer.assignComputerChoiceSpicy();
+  currentGame.alien.assignAlienChoice(event.target.id);
+  currentGame.computer.assignComputerChoice();
   currentGame.determineWinner();
   setTimeout(displayWins, 600);
 });
@@ -58,7 +56,6 @@ tokenButton.addEventListener('click', displayUserToken);
 
 changeButton.addEventListener('click', function() {
   toggleChangeButton();
-  // hideElement([changeButton]);
 });
 
 //Event Handlers & Functions
@@ -104,7 +101,6 @@ function updateWinText() {
   showElement([userImage, computerImage]);
 };
 
-//Should this function be in the game class?
 function updateWinIcon(choice) {
   if (choice === 'rock') {
     return './assets/happy-rocks.png';
