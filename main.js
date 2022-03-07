@@ -78,9 +78,6 @@ function showGamePage() {
   }
 };
 
-//Would it make more sense to invoke some of these functions in other functions?
-//This looks like a mess
-//Should I invoke more of them in my eventListener?
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
   hideElement([fighterText]);
