@@ -12,11 +12,9 @@ var fighterText = document.querySelector('.fighter-text');
 var winResult = document.querySelector('.win-results');
 var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
-
 var tokenButton = document.querySelector('.token-changer');
 var userCharacter = document.querySelector('.token-1');
 var changeButton = document.querySelector('.change-game');
-
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
@@ -33,15 +31,17 @@ spicyButton.addEventListener('click', function() {
 });
 
 classicImages.addEventListener('click', function() {
-  currentGame.assignAlienChoice(event.target.id);
-  currentGame.assignComputerChoice();
+  // currentGame.assignAlienChoice(event.target.id);
+  currentGame.alien.assignAlienChoice(event.target.id);
+  currentGame.computer.assignComputerChoice();
   currentGame.determineWinner();
   setTimeout(displayWins,600);
 });
 
 spicyImages.addEventListener('click', function() {
-  currentGame.assignAlienChoiceSpicy(event.target.id);
-  currentGame.assignComputerChoiceSpicy();
+  // currentGame.assignAlienChoiceSpicy(event.target.id);
+  currentGame.alien.assignAlienChoiceSpicy(event.target.id);
+  currentGame.computer.assignComputerChoiceSpicy();
   currentGame.determineWinner();
   setTimeout(displayWins, 600);
 });
@@ -51,7 +51,7 @@ clearButton.addEventListener('click', function() {
 });
 
 window.addEventListener('load', function() {
-  currentGame.assignPlayerTokens();
+  currentGame.assignTokens();
 })
 
 tokenButton.addEventListener('click', displayUserToken);
@@ -120,10 +120,10 @@ function updateWinIcon(choice) {
 };
 
 function displayWinIcons() {
-  userImage.src = updateWinIcon(currentGame.alienChoice);
-  userImage.alt = `happy ${currentGame.alienChoice}`;
-  computerImage.src = updateWinIcon(currentGame.computerChoice)
-  computerImage.alt = `happy ${currentGame.computerChoice}`;
+  userImage.src = updateWinIcon(currentGame.alien.choice);
+  userImage.alt = `happy ${currentGame.alien.choice}`;
+  computerImage.src = updateWinIcon(currentGame.computer.choice)
+  computerImage.alt = `happy ${currentGame.computer.choice}`;
 };
 
 function updateSidebarWins() {
