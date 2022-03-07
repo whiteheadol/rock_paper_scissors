@@ -20,7 +20,7 @@ The Rock, Paper, Scissors challenge was assigned as a final project for Turing S
 
 The game has two options - in my case these are represented by the labels **Classic** and **Spicy**, and users can switch between the to options as they wish.
 
-While completing this project, I feel that I built on my knowledge of and comfort with using class to class interaction. Personally, I felt that my biggest win was understanding how to separate the DOM manipulation from the data model itself.
+While completing this project, I feel that I built on my knowledge of and comfort with using class to class interaction. Personally, I felt that both my biggest win and challenge was understanding how to separate the DOM manipulation from the data model itself. This concept took the most thought and refactoring, but I feel that I was able to reach a point of understanding that I am happy with at this point in the program. 
 
 ## Deploy Link
 [Try the website here!]() (This is not functional yet, but I will be adding a deploy link as soon as the projects are graded and I am able to make it public.)

@@ -52,6 +52,7 @@ class Game {
     } else {
       this.winner = 'computer';
     }
+    
     this.isDraw = false;
     this.updateWins();
   }

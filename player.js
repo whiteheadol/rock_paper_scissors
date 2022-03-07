@@ -25,7 +25,7 @@ class Player {
       this.choice = 'rock';
     } else if (weaponId === 'paper' || weaponId === 'sPaper') {
       this.choice = 'paper';
-    } else if (weaponId = 'scissors' || weaponId === 'sScissors') {
+    } else if (weaponId === 'scissors' || weaponId === 'sScissors') {
       this.choice = 'scissors';
     } else if (weaponId === 'sLizard') {
       this.choice = 'lizard';

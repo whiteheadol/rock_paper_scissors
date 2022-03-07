@@ -69,9 +69,9 @@ h4 {
 }
 
 .token-1, .token-2 {
+  background-color: #d8ece9;
   height:80px;
   margin: 10px;
-  background-color: #d8ece9;
 }
 
 .token-changer {
@@ -148,7 +148,6 @@ h4 {
 .mini-image {
   height: 40px;
   margin: 20px;
-  weight: 40px;
 }
 
 .title {
@@ -174,11 +173,11 @@ h4 {
   height: 200px;
   margin: 20px 40px;
   padding: 20px;
-  transition: 0.6s;
 }
 
 .weapon-1:hover, .weapon-2:hover {
   transform: scale(1.4);
+  transition: 0.6s;
 }
 
 .weapon-win {

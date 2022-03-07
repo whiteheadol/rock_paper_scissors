@@ -73,7 +73,7 @@ function showGamePage() {
   hideElement([classicButton, spicyButton, subTitle, tokenButton]);
   if (currentGame.gameType === 'classic') {
     showElement([classicImages]);
-  } else if (currentGame.gameType === 'spicy') {
+  } else {
     showElement([spicyImages]);
   }
 };
@@ -95,6 +95,7 @@ function updateWinText() {
   } else {
     winResult.innerText = 'This round was a tie, try again!';
   }
+
   showElement([userImage, computerImage]);
 };
 
@@ -139,6 +140,7 @@ function toggleChooseAgainButton() {
   } else if (currentGame.gameType === 'spicy') {
     showElement([computerImage]);
   }
+  
   hideElement([userImage, computerImage, changeButton]);
   showGamePage();
 };
