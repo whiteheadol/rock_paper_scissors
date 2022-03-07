@@ -56,6 +56,12 @@ class Game {
     this.updateWins();
   }
 
+//Ask about combining lines 33-35 of main file into another method, then just calling
+//the one game method in main?
+  // assignChoicesAndWinner() {
+  //
+  // }
+
   updateWins() {
     if (this.winner === 'alien') {
       this.alien.takeTurn();

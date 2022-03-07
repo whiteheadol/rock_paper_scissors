@@ -9,7 +9,7 @@ var computerWins = document.querySelector('.computer-wins');
 var clearButton = document.querySelector('.clear-button');
 var subTitle = document.querySelector('.subtitle');
 var fighterText = document.querySelector('.fighter-text');
-var winResult = document.querySelector('.win-results');
+var winResult = document.querySelector('.win-result');
 var classicButton = document.querySelector('.classic-game');
 var spicyButton = document.querySelector('.spicy-game');
 var tokenButton = document.querySelector('.token-changer');
@@ -17,7 +17,6 @@ var userCharacter = document.querySelector('.token-1');
 var changeButton = document.querySelector('.change-game');
 var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
-
 
 //Event Listeners
 window.addEventListener('load', function() {
@@ -67,7 +66,7 @@ function hideElement(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add('hidden');
   }
-}
+};
 
 function showGamePage() {
   showElement([fighterText]);
@@ -79,6 +78,9 @@ function showGamePage() {
   }
 };
 
+//Would it make more sense to invoke some of these functions in other functions?
+//This looks like a mess
+//Should I invoke more of them in my eventListener?
 function displayWins() {
   showElement([clearButton, winResult, changeButton]);
   hideElement([fighterText]);
