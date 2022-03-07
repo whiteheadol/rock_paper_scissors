@@ -23,7 +23,7 @@ The game has two options - in my case these are represented by the labels **Clas
 While completing this project, I feel that I built on my knowledge of and comfort with using class to class interaction. Personally, I felt that my biggest win was understanding how to separate the DOM manipulation from the data model itself.
 
 ## Deploy Link
-[Try the website here!]()
+[Try the website here!]() (This is not functional yet, but I will be adding a deploy link as soon as the projects are graded and I am able to make it public.)
 
 ## Technologies
   - Javascript
@@ -35,15 +35,21 @@ While completing this project, I feel that I built on my knowledge of and comfor
 - When a user loads the page, they'll see a home screen with two side bars and a main page.
 - Clicking on the **Change your Token!** button will allow the user to cycle through three alien token options and choose their favorite. This token will persist at the top of the user's sidebar as they play the game.
 - From here, the user will be able to click on the classic or spicy game, depending on which they would prefer to play. (All buttons will change in color and size when hovered over, so that the user sees the fact that they are clickable.)
-- Once, deciding on a game style, the user will be able to select their weapon of choice. The game will pause for a moment, mimicking the computer taking the time to make a selection of its own. Then, the screen will update to show the two weapons chosen by the user and computer along with text declaring the winner. The appropriate sidebar will update as well to reflect the game's new score.
-- Two buttons will now appear under the chosen weapons. The user can click on **Choose again!** to play another round with the same level of difficulty, or **Switch games!** to load the other difficulty option. The side bars will keep a running score, regardless of how many times the user switches between the games. 
+- Once deciding on a game style, the user will be able to select their weapon of choice. The game will pause for a moment, mimicking the computer taking the time to make a selection of its own. Then, the screen will update to show the two weapons chosen by the user and computer along with text declaring the winner. The appropriate sidebar will update as well to reflect the game's new score.
+- Two buttons will now appear under the chosen weapons. The user can click on **Choose again!** to play another round with the same level of difficulty, or **Switch games!** to load the other difficulty option. The side bars will keep a running score, regardless of how many times the user switches between the games.
 
 ## Page Demo
-![Example of button functionality](https://media.giphy.com/media/YJ4jzH6DEZWkzvHl38/giphy.gif)
+An example of the token changing functionality:
+
+![Example of button functionality](https://media.giphy.com/media/EAf1r6v3IkPC265t3T/giphy.gif)
+
+Choosing a weapon:
+
+![Example of button functionality](https://media.giphy.com/media/eW42RvArwnwsXIVG7e/giphy.gif)
 
 ## Possible Future Extensions
 - Add local storage functionality so that user and computer wins persist upon page refresh.
-- Allow users to choose between different image styles if they want a different feel to their game.
+- Allow users to choose between different image styles for their weapon displays if they want a different feel to their game.
 
 ## Set Up
 1. Fork and clone this repo.
