@@ -1,6 +1,6 @@
-# ColoRandom
+# Rock, Paper, Scissors
 
-<img width="500" alt="Rock, Paper, Scissors Project" src="">
+<img width="500" alt="Rock, Paper, Scissors Project" src="https://user-images.githubusercontent.com/96206823/157110347-d362555b-2c6e-4c4b-b8ca-1c6b4f472f5c.png">
 
 ## Table of Contents
 
@@ -16,9 +16,11 @@
   - [Project GitHub Repo](#project-github-repo)
 
 ## Introduction
-Users are encouraged to visit our **ColoRandom** page for color palette inspiration for their next project. They can generate a completely random palette of five colors at a time, or save their desired colors and refresh the random colors of their choice around these saved options. All saved palettes will be shown in a sidebar for users to review as wished.
+The Rock, Paper, Scissors challenge was assigned as a final project for Turing School of Software Design's Front End Module 1. Students were instructed to work independently with a timeframe of one week to make a game with a minimum functionality laid out in the rubric.
 
-This project was assigned as a part of Turing School of Software and Design's Front-End program, students had one week to complete it.
+The game has two options - in my case these are represented by the labels **Classic** and **Spicy**, and users can switch between the to options as they wish.
+
+While completing this project, I feel that I built on my knowledge of and comfort with using class to class interaction. Personally, I felt that my biggest win was understanding how to separate the DOM manipulation from the data model itself.
 
 ## Deploy Link
 [Try the website here!]()
@@ -30,10 +32,11 @@ This project was assigned as a part of Turing School of Software and Design's Fr
     - Flexbox
 
 ## Features
-- When a user initially opens the page, they'll see five random colors with their associated hexcodes, an empty **Saved Palettes** section, and two buttons labeled **New Palette** and **Save Palette**.
-- To generate a completely new palette, the user can click **New Palette**. Five new colors will be displayed on the main screen.
-- From there, the user can click on a color that they like to *lock* that color in place. Now, when they generate a new palette, every color except those that are locked will change. Clicking on a color again will *unlock* a locked color. (This is visually demonstrated with an unlocked or locked icon below each color.)
-- When a user has a collection of colors that they're happy with, clicking **Save Palette** will move this palette into the Saved Palettes section. They can choose to remove any palette from this section by clicking the trash icon next to the appropriate palette.
+- When a user loads the page, they'll see a home screen with two side bars and a main page.
+- Clicking on the **Change your Token!** button will allow the user to cycle through three alien token options and choose their favorite. This token will persist at the top of the user's sidebar as they play the game.
+- From here, the user will be able to click on the classic or spicy game, depending on which they would prefer to play. (All buttons will change in color and size when hovered over, so that the user sees the fact that they are clickable.)
+- Once, deciding on a game style, the user will be able to select their weapon of choice. The game will pause for a moment, mimicking the computer taking the time to make a selection of its own. Then, the screen will update to show the two weapons chosen by the user and computer along with text declaring the winner. The appropriate sidebar will update as well to reflect the game's new score.
+- Two buttons will now appear under the chosen weapons. The user can click on **Choose again!** to play another round with the same level of difficulty, or **Switch games!** to load the other difficulty option. The side bars will keep a running score, regardless of how many times the user switches between the games. 
 
 ## Page Demo
 ![Example of button functionality](https://media.giphy.com/media/YJ4jzH6DEZWkzvHl38/giphy.gif)
