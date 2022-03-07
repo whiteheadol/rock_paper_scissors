@@ -28,6 +28,11 @@ class Game {
    }
  }
 
+  assignChoices(weaponId) {
+    this.alien.assignAlienChoice(weaponId);
+    this.computer.assignComputerChoice();
+  }
+
   determineWinner() {
     if (this.alien.choice === this.computer.choice) {
       this.winner = '';

@@ -20,6 +20,10 @@ var computerImage = document.querySelector('#computerChoice');
 
 
 //Event Listeners
+window.addEventListener('load', function() {
+  currentGame.assignTokens();
+});
+
 classicButton.addEventListener('click', function() {
   currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
@@ -31,15 +35,13 @@ spicyButton.addEventListener('click', function() {
 });
 
 classicImages.addEventListener('click', function() {
-  currentGame.alien.assignAlienChoice(event.target.id);
-  currentGame.computer.assignComputerChoice();
+  currentGame.assignChoices(event.target.id);
   currentGame.determineWinner();
   setTimeout(displayWins,600);
 });
 
 spicyImages.addEventListener('click', function() {
-  currentGame.alien.assignAlienChoice(event.target.id);
-  currentGame.computer.assignComputerChoice();
+  currentGame.assignChoices(event.target.id);
   currentGame.determineWinner();
   setTimeout(displayWins, 600);
 });
@@ -47,10 +49,6 @@ spicyImages.addEventListener('click', function() {
 clearButton.addEventListener('click', function() {
   setTimeout(toggleChooseAgainButton, 300);
 });
-
-window.addEventListener('load', function() {
-  currentGame.assignTokens();
-})
 
 tokenButton.addEventListener('click', displayUserToken);
 

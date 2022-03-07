@@ -21,29 +21,11 @@ class Player {
   }
 
   assignAlienChoice(weaponId) {
-    if (currentGame.gameType === 'classic') {
-      this.assignAlienChoiceClassic(weaponId);
-    } else if (currentGame.gameType === 'spicy') {
-      this.assignAlienChoiceSpicy(weaponId);
-    }
-  }
-
-  assignAlienChoiceClassic(weaponId) {
-    if (weaponId === 'rock') {
+    if (weaponId === 'rock' || weaponId === 'sRock') {
       this.choice = 'rock';
-    } else if (weaponId === 'paper') {
+    } else if (weaponId === 'paper' || weaponId === 'sPaper') {
       this.choice = 'paper';
-    } else if (weaponId = 'scissors') {
-      this.choice = 'scissors';
-    }
-  }
-
-  assignAlienChoiceSpicy(weaponId) {
-    if (weaponId === 'sRock') {
-      this.choice = 'rock';
-    } else if (weaponId === 'sPaper') {
-      this.choice = 'paper';
-    } else if (weaponId === 'sScissors') {
+    } else if (weaponId = 'scissors' || weaponId === 'sScissors') {
       this.choice = 'scissors';
     } else if (weaponId === 'sLizard') {
       this.choice = 'lizard';
