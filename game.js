@@ -3,16 +3,13 @@ class Game {
     this.gameType = '';
     this.alien = new Player('alien');
     this.computer = new Player('computer');
-    this.alienChoice = '';
-    this.computerChoice = '';
     this.isDraw = false;
     this.winner = '';
   }
 
-//Refactor this!!
-  assignPlayerTokens() {
-    this.alien.token = './assets/black-and-white-alien.png';
-    this.computer.token = './assets/482469.png';
+  assignTokens() {
+    this.alien.assignPlayerTokens();
+    this.computer.assignPlayerTokens();
   }
 
   determineGameType(gameId) {
@@ -31,71 +28,26 @@ class Game {
    }
  }
 
-  assignAlienChoice(weaponId) {
-    if (weaponId === 'rock') {
-      this.alienChoice = 'rock';
-    } else if (weaponId === 'paper') {
-      this.alienChoice = 'paper';
-    } else if (weaponId = 'scissors') {
-      this.alienChoice = 'scissors';
-    }
-  }
-
-  assignAlienChoiceSpicy(weaponId) {
-    if (weaponId === 'sRock') {
-      this.alienChoice = 'rock';
-    } else if (weaponId === 'sPaper') {
-      this.alienChoice = 'paper';
-    } else if (weaponId === 'sScissors') {
-      this.alienChoice = 'scissors';
-    } else if (weaponId === 'sLizard') {
-      this.alienChoice = 'lizard';
-    } else if (weaponId === 'sAlien') {
-      this.alienChoice = 'alien';
-    }
-  }
-
-  assignComputerChoice() {
-    var computerNum = Math.floor(Math.random() * 3);
-    if (computerNum === 0) {
-      this.computerChoice = 'rock';
-    } else if (computerNum === 1) {
-      this.computerChoice = 'paper';
-    } else if (computerNum === 2) {
-      this.computerChoice = 'scissors';
-    }
-  }
-
-  assignComputerChoiceSpicy() {
-    var computerSpicy = Math.floor(Math.random() * 5);
-    if (computerSpicy === 0) {
-      this.computerChoice = 'rock';
-    } else if (computerSpicy === 1) {
-      this.computerChoice = 'paper';
-    } else if (computerSpicy === 2) {
-      this.computerChoice = 'scissors';
-    } else if (computerSpicy === 3) {
-      this.computerChoice = 'lizard';
-    } else if (computerSpicy === 4) {
-      this.computerChoice = 'alien';
-    }
+  assignChoices(weaponId) {
+    this.alien.assignAlienChoice(weaponId);
+    this.computer.assignComputerChoice();
   }
 
   determineWinner() {
-    if (this.alienChoice === this.computerChoice) {
+    if (this.alien.choice === this.computer.choice) {
       this.winner = '';
       return this.isDraw = true;
-    } else if (this.alienChoice === 'rock' && (this.computerChoice === 'scissors' || this.computerChoice === 'lizard')) {
+    } else if (this.alien.choice === 'rock' && (this.computer.choice === 'scissors' || this.computer.choice === 'lizard')) {
       this.winner = 'alien';
-    } else if (this.alienChoice === 'paper' && (this.computerChoice === 'rock' || this.computerChoice === 'alien')) {
+    } else if (this.alien.choice === 'paper' && (this.computer.choice === 'rock' || this.computer.choice === 'alien')) {
       this.winner = 'alien';
-    } else if (this.alienChoice === 'scissors' && (this.computerChoice === 'paper' || this.computerChoice === 'lizard')) {
+    } else if (this.alien.choice === 'scissors' && (this.computer.choice === 'paper' || this.computer.choice === 'lizard')) {
       this.winner = 'alien';
     } else if (this.gameType === 'classic') {
       this.winner = 'computer';
-    } else if (this.alienChoice === 'lizard' && (this.computerChoice === 'paper' || this.computerChoice === 'alien')) {
+    } else if (this.alien.choice === 'lizard' && (this.computer.choice === 'paper' || this.computer.choice === 'alien')) {
       this.winner = 'alien';
-    } else if (this.alienChoice === 'alien' && (this.computerChoice === 'scissors' || this.computerChoice === 'rock')) {
+    } else if (this.alien.choice === 'alien' && (this.computer.choice === 'scissors' || this.computer.choice === 'rock')) {
       this.winner = 'alien';
     } else {
       this.winner = 'computer';

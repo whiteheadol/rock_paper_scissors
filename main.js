@@ -19,6 +19,10 @@ var userImage = document.querySelector('#userChoice');
 var computerImage = document.querySelector('#computerChoice');
 
 //Event Listeners
+window.addEventListener('load', function() {
+  currentGame.assignTokens();
+});
+
 classicButton.addEventListener('click', function() {
   currentGame.determineGameType(event.target.parentElement.id);
   showGamePage();
@@ -30,15 +34,13 @@ spicyButton.addEventListener('click', function() {
 });
 
 classicImages.addEventListener('click', function() {
-  currentGame.assignAlienChoice(event.target.id);
-  currentGame.assignComputerChoice();
+  currentGame.assignChoices(event.target.id);
   currentGame.determineWinner();
   setTimeout(displayWins,600);
 });
 
 spicyImages.addEventListener('click', function() {
-  currentGame.assignAlienChoiceSpicy(event.target.id);
-  currentGame.assignComputerChoiceSpicy();
+  currentGame.assignChoices(event.target.id);
   currentGame.determineWinner();
   setTimeout(displayWins, 600);
 });
@@ -47,13 +49,11 @@ clearButton.addEventListener('click', function() {
   setTimeout(toggleChooseAgainButton, 300);
 });
 
-window.addEventListener('load', function() {
-  currentGame.assignPlayerTokens();
-});
-
 tokenButton.addEventListener('click', displayUserToken);
 
-changeButton.addEventListener('click', toggleChangeButton);
+changeButton.addEventListener('click', function() {
+  toggleChangeButton();
+});
 
 //Event Handlers & Functions
 function showElement(elements) {
@@ -101,8 +101,6 @@ function updateWinText() {
   showElement([userImage, computerImage]);
 };
 
-//Should this function be in the game class?
-//I'm not reassigning anything, just trying to break a long function up
 function updateWinIcon(choice) {
   if (choice === 'rock') {
     return './assets/happy-rocks.png';
@@ -118,10 +116,10 @@ function updateWinIcon(choice) {
 };
 
 function displayWinIcons() {
-  userImage.src = updateWinIcon(currentGame.alienChoice);
-  userImage.alt = `happy ${currentGame.alienChoice}`;
-  computerImage.src = updateWinIcon(currentGame.computerChoice)
-  computerImage.alt = `happy ${currentGame.computerChoice}`;
+  userImage.src = updateWinIcon(currentGame.alien.choice);
+  userImage.alt = `happy ${currentGame.alien.choice}`;
+  computerImage.src = updateWinIcon(currentGame.computer.choice)
+  computerImage.alt = `happy ${currentGame.computer.choice}`;
 };
 
 function updateSidebarWins() {

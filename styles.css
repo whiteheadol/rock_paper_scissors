@@ -87,8 +87,8 @@ h4 {
 
 .token-changer, .change-game {
   font-size: 20px;
-  margin-top: 30px;
   height: 70px;
+  margin-top: 30px;
   width: 180px;
 }
 
@@ -103,12 +103,22 @@ h4 {
   flex-direction: column;
   justify-content: flex-start;
   width: 70%;
-  /* height: 100vh; */
 }
+
+/* .classic-game {
+  height: 30%;
+  margin-top: 80px;
+  width: 40%;
+} */
 
 .weapon-images {
   display: flex;
 }
+
+/* .spicy-game {
+  height: 40%;
+  width: 60%;
+} */
 
 .game-options {
   align-items: center;
